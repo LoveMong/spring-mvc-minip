@@ -9,7 +9,7 @@
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/js/login_register.js"></script>
+    <script type="text/javascript" src="<c:url value='/resources/js/login_register.js'/>"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/login.css'/>">
 
 

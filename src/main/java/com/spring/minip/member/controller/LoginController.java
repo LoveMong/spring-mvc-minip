@@ -1,15 +1,15 @@
-package com.studyproject.board.controller;
+package com.spring.minip.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
-public class HomeController {
+@RequestMapping("/login")
+public class LoginController {
 
-    @GetMapping("/hello")
-    public String hello() {
+    @GetMapping("/login")
+    public String login() {
         return "/user/loginForm";
     }
 }

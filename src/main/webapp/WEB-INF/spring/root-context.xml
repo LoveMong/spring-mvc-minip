@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <!--		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
-        <!--		<property name="url" value="jdbc:mysql://localhost:3306/springbasic?useUnicode=true&amp;characterEncoding=utf8"/>-->
         <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
         <property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/spring_minip?useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="username" value="spring"/>
         <property name="password" value="1234"/>
     </bean>
+    <!-- SqlSessionFactory빈 : SqlSessionFactory를 spring에서 사용하기 위한 빈-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation"  value="classpath:mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+        <property name="configLocation"  value="classpath:mybatis-config.xml"/> <!-- Mybatis 설정 파일-->
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/> <!--Mapper.xml 문서 지정-->
     </bean>
-
+    <!-- SqlSessionTemplate : 멀티 쓰레드에 안전하기(thread-safe) 때문에 여러 dao가 공유해도 안전 -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg ref="sqlSessionFactory"/>
     </bean>
+
+    <tx:annotation-driven/>
+    <context:component-scan base-package="com.spring.minip.member"/>
 
 
 </beans>
