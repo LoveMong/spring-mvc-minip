@@ -55,7 +55,7 @@ public class LoginController {
             response.addCookie(cookie);
         }
 //      * 사용자 편의를 위한 경로 추적
-        toUrl = toUrl == null || toUrl.equals("") ? "/" : toUrl;
+        toUrl = toUrl == null && toUrl.equals("") ? "/" : toUrl;
 
         return "redirect:" + toUrl;
 
