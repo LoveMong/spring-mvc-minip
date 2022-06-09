@@ -17,7 +17,7 @@ public class MemberServiceImplTest {
     private MemberService memberService;
 
     @Test
-    public void loginTest () throws Exception {
+    public void loginTest() throws Exception {
         //given
         String memberId = "mong";
 

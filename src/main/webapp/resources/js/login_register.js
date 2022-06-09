@@ -49,19 +49,23 @@ $(document).ready(function(){
 // Login 유효성 검사
 function loginCheck() {
 
-    if (document.frm.userid.value.length == 0) {
-        alert("아이디를 입력해주세요.");
-        frm.userid.focus();
+    if (document.frm.memberId.value.length == 0) {
+        setMessage('아이디를 입력해주세요.', frm.memberId)
         return false;
     }
-    if (document.frm.pwd.value == "") {
-        alert("암호는 반드시 입력해야 합니다.");
-        frm.pwd.focus();
+    if (document.frm.memberPwd.value == "") {
+        setMessage('패스워드를 입력해주세요.', frm.memberPwd)
         return false;
     }
 
     return true;
 
+}
+function setMessage(message, element){
+    document.getElementById("message").innerHTML = `<i class="fa fa-exclamation-circle"> ${message}</i>`;
+    if(element) {
+        element.select();
+    }
 }
 
 function joinCheck() {
