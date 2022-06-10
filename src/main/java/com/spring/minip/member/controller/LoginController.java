@@ -18,7 +18,7 @@ import java.net.URLEncoder;
  *  로그인 기능 컨트롤을 위한 클래스 *
  * @Project : spring-minip
  * @Date : 2022-06-09
- * @author uthor : L *
+ * @author : L *
  */
 @Controller
 @RequestMapping("/login")
