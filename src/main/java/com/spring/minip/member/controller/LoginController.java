@@ -14,6 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
 
+/**
+ *  로그인 기능 컨트롤을 위한 클래스 *
+ * @Project : spring-minip
+ * @Date : 2022-06-09
+ * @author uthor : L *
+ */
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -21,12 +27,25 @@ public class LoginController {
     @Autowired
     private MemberService memberService;
 
-
+    /**
+     * Get 방식 요청 Url(/login)에 대한 view return(loginForm) 메소드
+     * @return login.jsp
+     */
     @GetMapping("/login")
     public String loginFrom() {
         return "/user/loginForm";
     }
 
+    /**
+     * Post 방식 요청 주소(/login)에 대한 view return 메소드
+     * @param memberId 로그인 아이디 값
+     * @param memberPwd 로그인 패스워드 값
+     * @param toUrl 로그인 페이지(loginForm)로 이동하기 전 page Url
+     * @param request 세션 부여 시 사용
+     * @param response 쿠키 부여 여부 전달 시 사용
+     * @return 사용자 인증 실패시 loginForm(view), 성공 시 main(view)로 이동
+     * @throws Exception
+     */
     @PostMapping("/login")
     public String login(String memberId, String memberPwd, String toUrl, boolean rememberId,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -61,17 +80,20 @@ public class LoginController {
 
     }
 
-    private boolean loginCheck(String memberId, String memberPwd) {
+    /**
+     * 사용자의 아이디와 비밀번호를 DB와 통신을 통해 일치 여부를 확인한다.
+     * @param memberId 로그인 아이디 값
+     * @param memberPwd 로그인 패스워드 값
+     * @return boolean 지역 변수 memberDto의 값이 null 아니면서 memberDto의 pwd 값과 매개변수 memeberPwd의 값이 같으면 true(1) 반환 아니면 false(0)반환
+     */
+    private boolean loginCheck(String memberId, String memberPwd) throws Exception {
 
         MemberDto memberDto = null;
 
-        try {
-            memberDto = memberService.login(memberId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        memberDto = memberService.login(memberId);
 
         return memberDto != null && memberDto.getMember_pwd().equals(memberPwd);
+
     }
 
 }
