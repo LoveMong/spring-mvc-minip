@@ -4,4 +4,6 @@ import com.spring.minip.member.domain.MemberDto;
 
 public interface MemberService {
     MemberDto login(String memberId) throws Exception;
+
+    void registerMember(MemberDto memberDto) throws Exception;
 }

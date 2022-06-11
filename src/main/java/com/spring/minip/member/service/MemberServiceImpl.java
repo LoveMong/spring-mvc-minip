@@ -15,4 +15,9 @@ public class MemberServiceImpl implements MemberService {
     public MemberDto login(String memberId) throws Exception {
         return memberDao.selectMember(memberId);
     }
+
+    @Override
+    public void registerMember(MemberDto memberDto) throws Exception {
+        memberDao.insertMember(memberDto);
+    }
 }

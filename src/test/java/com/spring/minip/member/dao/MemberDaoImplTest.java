@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.lang.reflect.Member;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,16 +36,14 @@ public class MemberDaoImplTest {
     @Test
     public void insertMember () throws Exception {
         //given
-        MemberDto memberDto = new MemberDto("mong1", "Lee", "1234", "222@aaaa");
+        MemberDto memberDto = new MemberDto("mong2", "Lee", "1234", "222@aaaa");
         System.out.println("memberDto = " + memberDto);
         //when
         memberDao.insertMember(memberDto);
-
-
+        MemberDto memberDto1 = memberDao.selectMember(memberDto.getMember_id());
 
         //then
-
-
+        assertEquals(memberDto1.getMember_id(), memberDto.getMember_id());
 
 
     }

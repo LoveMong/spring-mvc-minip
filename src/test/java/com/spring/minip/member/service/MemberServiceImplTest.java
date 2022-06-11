@@ -21,7 +21,6 @@ public class MemberServiceImplTest {
         //given
         String memberId = "mong";
 
-
         //when
         MemberDto memberDto = memberService.login(memberId);
 
@@ -29,6 +28,22 @@ public class MemberServiceImplTest {
         assertEquals(memberId, memberDto.getMember_id());
 
     }
+    
+    @Test
+    public void registerMember() throws Exception {
+        //given
+        MemberDto memberDto1 = new MemberDto("mong3", "Lee", "1234", "eeee@eeee");
+
+        //when
+        memberService.registerMember(memberDto1);
+        MemberDto memberDto2 = memberService.login(memberDto1.getMember_id());
+
+        //then
+        assertEquals(memberDto2.getMember_id(), memberDto1.getMember_id());
+
+       
+    }
+        
 
 
 }

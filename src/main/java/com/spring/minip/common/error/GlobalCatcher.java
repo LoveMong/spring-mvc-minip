@@ -1,4 +1,4 @@
-package com.spring.minip.error;
+package com.spring.minip.common.error;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
