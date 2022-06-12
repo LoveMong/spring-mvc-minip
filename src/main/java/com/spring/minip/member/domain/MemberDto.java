@@ -9,18 +9,25 @@ import java.util.Date;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class MemberDto {
-    @NonNull
+
     private String member_id;
-    @NonNull
+
     private String member_name;
-    @NonNull
+
     private String member_pwd;
-    @NonNull
+
     private String member_email;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date register_date;
 
+    public MemberDto(String member_id, String member_name, String member_pwd, String member_email) {
+        this.member_id = member_id;
+        this.member_name = member_name;
+        this.member_pwd = member_pwd;
+        this.member_email = member_email;
+    }
 }

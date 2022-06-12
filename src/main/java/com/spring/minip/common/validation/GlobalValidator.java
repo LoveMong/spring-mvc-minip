@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 /**
  * MemberDto 객체 검증 클래스
  */
-public class MemberValidator implements Validator {
+public class GlobalValidator implements Validator {
 //  (Interface)validator : 데이터를 검증하기 위한 인터페이스
 
     /**
@@ -30,25 +30,6 @@ public class MemberValidator implements Validator {
      */
     @Override
     public void validate(Object target, Errors errors) {
-//      (Interface) Errors : 객체 전체에 대한 error를 저장(reject) 또는 필드(id, pwd)에 대한 error를 저장(rejectValue)
-//      target은 MemberDto 타입으로 형변환, InstanceOf는 생략(위 supports 메서드에서 이미 확인)
-        MemberDto memberDto = (MemberDto) target;
-
-
-        String memberId = memberDto.getMember_id();
-
-//      memberId가 null이거나 빈 문자열이면 memberId 필드에서 required 라는 error 코드 저장
-//      if (memberId == null || "".equals(memberId.trim())) {
-//         errors.rejectValue("memberId", "required");
-//      }
-
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "memberId", "required");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "memberPwd", "required");
-
-        if (memberId.length() < 5 || memberId.length() > 12) {
-            errors.rejectValue("memberId", "invalidLength");
-        }
-
 
     }
 }

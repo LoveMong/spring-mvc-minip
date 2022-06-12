@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  *  로그인 기능 컨트롤을 위한 클래스 *
@@ -33,7 +34,7 @@ public class LoginController {
      */
     @GetMapping("/login")
     public String loginFrom() {
-        return "/user/loginForm";
+        return "/member/loginForm";
     }
 
     /**
@@ -53,7 +54,7 @@ public class LoginController {
 //      1. 아이디와 패스워드 확인 (loginCheck)
         if (!loginCheck(memberId, memberPwd)) {
 //          1-1. 아이디와 패스워드가 일치하지 않으면 그 내용을 message에 담에 login 페이지로 redirect
-            String message = URLEncoder.encode("아이디 또는 패스워드가 일치하지 않습니다.", "utf-8");
+            String message = URLEncoder.encode("아이디 또는 패스워드가 일치하지 않습니다.", StandardCharsets.UTF_8);
             return "redirect:/login/login?message=" + message;
         }
 //      2. 아이디와 패스워드가 일치하면
@@ -90,7 +91,7 @@ public class LoginController {
 
         MemberDto memberDto = null;
 
-        memberDto = memberService.login(memberId);
+        memberDto = memberService.checkMember(memberId);
 
         return memberDto != null && memberDto.getMember_pwd().equals(memberPwd);
 

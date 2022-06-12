@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page import="java.net.URLDecoder"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <script type="text/javascript" src="<c:url value='/resources/js/login_register.js?ver=4'/>"></script>
+    <script type="text/javascript" src="<c:url value='/resources/js/login_register.js?ver=18'/>"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/login.css'/>">
 
 
@@ -72,26 +73,28 @@
                             </form>
 
                             <form id="register-form" action="/member/join.do" method="post" role="form" style="display: none;" name="jrm">
+                                <div class="form-group text-center" id="message2">
+                                    <c:if test="${not empty param.message}">
+                                        <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.message, "utf-8")}</i>
+                                    </c:if>
+                                </div>
                                 <div class="form-group">
-                                    <input type="text" name=userid id="userid" tabindex="1" class="form-control" placeholder="ID" value="">
+                                    <input type="text" name=member_id id="member_id" tabindex="1" class="form-control" placeholder="ID" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="button" tabindex="2" class="form-control" value="Check ID" id="idCheck">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="name" id="name" tabindex="3" class="form-control" placeholder="Name" value="">
+                                    <input type="text" name="member_name" id="name" tabindex="3" class="form-control" placeholder="Name" value="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" tabindex="4" class="form-control" placeholder="Email Address">
+                                    <input type="email" name="member_email" id="email" tabindex="4" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="phone" id="phone" tabindex="5" class="form-control" placeholder="Phone Number">
+                                    <input type="password" name="member_pwd" id="jpwd" tabindex="6" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="pwd" id="jpwd" tabindex="6" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="cpwd" id="cpwd" tabindex="7" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" name="memeber_cpwd" id="cpwd" tabindex="7" class="form-control" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">

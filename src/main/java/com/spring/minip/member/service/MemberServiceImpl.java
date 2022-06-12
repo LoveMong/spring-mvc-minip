@@ -12,7 +12,7 @@ public class MemberServiceImpl implements MemberService {
     private MemberDao memberDao;
 
     @Override
-    public MemberDto login(String memberId) throws Exception {
+    public MemberDto checkMember(String memberId) throws Exception {
         return memberDao.selectMember(memberId);
     }
 

@@ -19,13 +19,18 @@ $(document).ready(function(){
 // 아이디 생성 시 중복 검사
     $('#idCheck').click(function(){
 
-        if (document.jrm.userid.value == "") {
+        if (document.jrm.member_id.value == "") {
             alert('아이디를 입력해주세요.');
-            jrm.userid.focus();
+            jrm.member_id.focus();
             return;
         }
-        var url = "idCheck.do?userid=" + document.jrm.userid.value;
-        window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");
+
+        let url = "/register/checkId?member_id=" + document.jrm.member_id.value;
+        var popupX = (window.screen.width / 2) - (450 / 2);
+        popupX += window.screenLeft;
+        var popupY = (window.screen.height / 2) - (400 / 2);
+        let option = "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=400, left=" + popupX  + ", top=" + popupY;
+        window.open(url, "_blank", option);
 
 
     });
@@ -33,9 +38,9 @@ $(document).ready(function(){
 // 중복 체크된 아이디 사용
     $('#start').click(function(){
 
-        var userid = $('#userid').val();
+        var member_id = $('#member_id').val();
 
-        opener.jrm.userid.value = userid; //opener -> 자식창에서 부모창을 가리
+        opener.jrm.member_id.value = member_id; //opener -> 자식창에서 부모창을 가리
 
         self.close();
 
@@ -50,7 +55,7 @@ $(document).ready(function(){
 function loginCheck() {
 
     if (document.frm.memberId.value.length == 0) {
-        setMessage('아이디를 입력해주세요.', frm.memberId)
+        setMessage('아이디를 입력해주세요.', frm.member_id)
         return false;
     }
     if (document.frm.memberPwd.value == "") {
@@ -76,6 +81,11 @@ function joinCheck() {
     console.log("pwd:"+pwd);
     console.log("cpwd:"+cpwd);
 
+    if (document.jrm.member_id.value.length == 0) {
+        alert("아이디를 입력해주세요.");
+        jrm.member_id.focus();
+        return false;
+    }
     if (document.jrm.userid.value.length == 0) {
         alert("아이디를 입력해주세요.");
         jrm.userid.focus();
@@ -145,11 +155,11 @@ function editCheck() {
         prm.email.focus();
         return false;
     }
-    if (document.prm.phone.value.length == 0) {
-        alert("핸드폰 번호를 입력해주세요.");
-        prm.phone.focus();
-        return false;
-    }
+    // if (document.prm.phone.value.length == 0) {
+    //     alert("핸드폰 번호를 입력해주세요.");
+    //     prm.phone.focus();
+    //     return false;
+    // }
     if (document.prm.epwd.value == "") {
         alert("암호는 반드시 입력해야 합니다.");
         prm.epwd.focus();
