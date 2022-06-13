@@ -12,7 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <script type="text/javascript" src="<c:url value='/resources/js/login_register.js?ver=18'/>"></script>
+    <script type="text/javascript" src="<c:url value='/resources/js/login_register.js?ver=<%=new java.util.Date().getTime()%>'/>"></script>
     <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/login.css'/>">
 
 
@@ -73,7 +73,7 @@
                             </form>
 
                             <form id="register-form" action="/member/join.do" method="post" role="form" style="display: none;" name="jrm">
-                                <div class="form-group text-center" id="message2">
+                                <div class="form-group text-center" id="message_join">
                                     <c:if test="${not empty param.message}">
                                         <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.message, "utf-8")}</i>
                                     </c:if>
@@ -85,21 +85,21 @@
                                     <input type="button" tabindex="2" class="form-control" value="Check ID" id="idCheck">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="member_name" id="name" tabindex="3" class="form-control" placeholder="Name" value="">
+                                    <input type="text" name="member_name" id="member_name" tabindex="3" class="form-control" placeholder="Name">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="member_email" id="email" tabindex="4" class="form-control" placeholder="Email Address">
+                                    <input type="email" name="member_email" id="member_email" tabindex="4" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="member_pwd" id="jpwd" tabindex="6" class="form-control" placeholder="Password">
+                                    <input type="password" name="member_jpwd" id="member_jpwd" tabindex="6" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="memeber_cpwd" id="cpwd" tabindex="7" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" name="memeber_cpwd" id="member_cpwd" tabindex="7" class="form-control" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" onclick="return joinCheck()">
+                                            <input type="button" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" onclick="joinCheck()">
                                         </div>
                                     </div>
                                 </div>
