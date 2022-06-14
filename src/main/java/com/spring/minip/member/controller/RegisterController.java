@@ -13,8 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ *  회원가입 기능 컨트롤을 위한 클래스
+ * @Project : spring-minip
+ * @Date : 2022-06-13
+ * @author : L
+ */
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
@@ -31,6 +36,13 @@ public class RegisterController {
         binder.setValidator(new MemberValidator()); // MemberValidator를 로컬 validator로 등록(Controller 내에서만 사용 가능)
     }
 
+    /**
+     *
+     * @param memberDto
+     * @param m
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/checkId")
     public String checkId(MemberDto memberDto, Model m) throws Exception {
         m.addAttribute("memberId", memberDto.getMember_id());
@@ -63,9 +75,7 @@ public class RegisterController {
 
     private boolean check(String memberId) throws Exception {
         MemberDto memberDto = memberService.checkMember(memberId);
-
         return memberDto == null;
-
     }
 }
 

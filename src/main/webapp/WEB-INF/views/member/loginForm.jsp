@@ -13,7 +13,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
     <script type="text/javascript" src="<c:url value='/resources/js/login_register.js?ver=<%=new java.util.Date().getTime()%>'/>"></script>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/login.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/login.css?ver=<%=new java.util.Date().getTime()%>'/>">
 
 
     <!------ Include the above in your HEAD tag ---------->

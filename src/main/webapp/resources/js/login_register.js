@@ -86,7 +86,6 @@ $(document).ready(function(){
         let member_id = $('#member_id').val();
 
         opener.jrm.member_id.value = member_id; //opener -> 자식창에서 부모창 선택
-
         opener.jrm.idCheck.value = "Check Completed";
 
         self.close();
