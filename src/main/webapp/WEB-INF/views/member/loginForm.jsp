@@ -72,7 +72,7 @@
                                 </div>
                             </form>
 
-                            <form id="register-form" action="/member/join.do" method="post" role="form" style="display: none;" name="jrm">
+                            <form id="register-form" action="<c:url value='/register/save'/>" method="post" role="form" style="display: none;" name="jrm">
                                 <div class="form-group text-center" id="message_join">
                                     <c:if test="${not empty param.message}">
                                         <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.message, "utf-8")}</i>
@@ -91,7 +91,7 @@
                                     <input type="email" name="member_email" id="member_email" tabindex="4" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="member_jpwd" id="member_jpwd" tabindex="6" class="form-control" placeholder="Password">
+                                    <input type="password" name="member_pwd" id="member_jpwd" tabindex="6" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="memeber_cpwd" id="member_cpwd" tabindex="7" class="form-control" placeholder="Confirm Password">

@@ -161,7 +161,7 @@ function joinCheck() {
         return false;
     }
 
-    document.register_form.submit();
+    document.getElementById("register-form").submit();
 
 
 }

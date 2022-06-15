@@ -3,10 +3,14 @@ package com.spring.minip.member.controller;
 import com.spring.minip.common.validation.MemberValidator;
 import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
+import lombok.extern.slf4j.Slf4j;
+import org.mybatis.logging.Logger;
+import org.mybatis.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,18 +18,23 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  *  회원가입 기능 컨트롤을 위한 클래스
  * @Project : spring-minip
  * @Date : 2022-06-13
  * @author : L
  */
+@Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
 
     @Autowired
     private MemberService memberService;
+
+    private final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
     /**
      * 해당 Controler로 들어오는 요청에 대한 추가적인 설정 메소드
@@ -34,6 +43,9 @@ public class RegisterController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.setValidator(new MemberValidator()); // MemberValidator를 로컬 validator로 등록(Controller 내에서만 사용 가능)
+        List<Validator> validatorList = binder.getValidators();
+
+
     }
 
     /**
