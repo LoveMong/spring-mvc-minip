@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration status="warn" pakages="com.spring.minip">
+<Configuration status="INFO">
 	<Properties>
 		<Property name="LOG_PATTERN">%d{HH:mm:ss.SSSZ} [%t] %-5level %logger{36} - %msg%n</Property>
 	</Properties>
@@ -9,47 +9,13 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Root level="INFO" additivity="false" >
-			<AppenderRef ref="console" />
+		<Root level="info">
+			<AppenderRef ref="ConsoleLog" />
+			<AppenderRef ref="FileLog" />
 		</Root>
 
-		<!-- log4j2 -->
-		<logger name="log4jdbc.log4j2" level="error" additivity="false">
-			<appender-ref ref="console" />
-		</logger>
-
-		<!-- QUERY LOG -->
-		<logger name="jdbc.sqlonly" additivity="false" level="INFO">
-			<appender-ref ref="console" />
-		</logger>
-
-		<!-- RESULTSET TABLE -->
-		<logger name="jdbc.resultsettable" additivity="false" level="INFO">
-			<appender-ref ref="console" />
-		</logger>
-
-		<!-- query + time -->
-		<logger name="jdbc.sqltiming" level="off"/>
-
-		<!-- 전체 로그 ( 양 상당히 많아짐 ) -->
-		<logger name="jdbc.audit" level="off"/>
-
-		<!-- resultsettable + resultset (parameter) -->
-		<logger name="jdbc.resultset" level="off"/>
-
-		<!-- connection log -->
-		<logger name="jdbc.connection" level="off"/>
-
-		<logger name = "com.error" level="INFO" additivity="false" >
-			<AppenderRef ref="rolling_error"/>
-		</logger>
-
-		<logger name = "com.console" level="INFO" additivity="false">
-			<AppenderRef ref="rolling_console"/>
-		</logger>
 	</Loggers>
 </Configuration>
-
 
 	<!--
 	Configuration: 로그 설정을 위한 최상위 요소

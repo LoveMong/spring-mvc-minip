@@ -4,8 +4,6 @@ import com.spring.minip.common.validation.MemberValidator;
 import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
-import org.mybatis.logging.Logger;
-import org.mybatis.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,15 +24,18 @@ import java.util.List;
  * @Date : 2022-06-13
  * @author : L
  */
+
 @Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
 
+
+
     @Autowired
     private MemberService memberService;
 
-    private final Logger logger = LoggerFactory.getLogger(RegisterController.class);
+
 
     /**
      * 해당 Controler로 들어오는 요청에 대한 추가적인 설정 메소드
@@ -57,6 +58,7 @@ public class RegisterController {
      */
     @GetMapping("/checkId")
     public String checkId(MemberDto memberDto, Model m) throws Exception {
+
         m.addAttribute("memberId", memberDto.getMember_id());
 
         if (!check(memberDto.getMember_id())) {
@@ -77,6 +79,7 @@ public class RegisterController {
 //        memberValidator.validate(memberDto, resutl);
 
 //      MemberDto 객체를 검증한 결과 에러가 있으면 loginForm을 이용해서 에러를 보여준다.
+
         if (result.hasErrors()) {
             return "member/loginForm";
         }
