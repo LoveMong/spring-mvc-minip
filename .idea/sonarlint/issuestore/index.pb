@@ -15,8 +15,6 @@ X
 -src/main/webapp/WEB-INF/views/error/error.jsp,a/0/a03ddc9a7b4f0307a1a7103fe927751a0d3ac78f
 n
 >src/main/java/com/spring/minip/common/error/GlobalCatcher.java,3/a/3aff84c84177545574eb1e0b53d18ddbc48e78d7
-t
-Dsrc/main/java/com/spring/minip/member/controller/HomeController.java,d/8/d88320a61b08de4e2ac2632ce2bac2047f73342c
 h
 8src/main/java/com/spring/minip/member/dao/MemberDao.java,3/f/3f80142593004a1ccecfd180165fc8d9ff138007
 p
@@ -31,12 +29,8 @@ y
 Isrc/test/java/com/spring/minip/common/validation/MemberValidatorTest.java,4/b/4ba171ceea0029da3572d0c06e7bc4b5f5a82876
 W
 'src/main/webapp/resources/css/login.css,b/d/bd3758c4f2a5584161aa1c00e23644c88123c973
-u
-Esrc/main/java/com/spring/minip/member/controller/LoginController.java,e/e/eead9a35ee4329f810169e8c2475d2f34745b264
 `
 0src/main/webapp/WEB-INF/views/member/checkID.jsp,0/d/0d2f3e70baf1768a529f471905524fbc1762574b
-k
-;src/main/java/com/spring/minip/member/domain/MemberDto.java,3/4/3446b5342507a0ed487d9030d01999255f2a477b
 b
 2src/main/webapp/WEB-INF/views/member/loginForm.jsp,0/9/09f2266150621b4eefcff30d8d5f3364872bb614
 ^

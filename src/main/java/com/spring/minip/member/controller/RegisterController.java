@@ -45,7 +45,7 @@ public class RegisterController {
     public void initBinder(WebDataBinder binder) {
         binder.setValidator(new MemberValidator()); // MemberValidator를 로컬 validator로 등록(Controller 내에서만 사용 가능)
         List<Validator> validatorList = binder.getValidators();
-
+        log.error("validator", validatorList);
 
     }
 
