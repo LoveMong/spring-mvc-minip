@@ -42,12 +42,10 @@ public class MemberValidator implements Validator {
 //         errors.rejectValue("memberId", "required");
 //      }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "memberId", "required");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "memberPwd", "required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, memberId, "required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, memberId, "required");
 
-        if (memberId.length() < 5 || memberId.length() > 12) {
-            errors.rejectValue("memberId", "invalidLength");
-        }
+
 
 
     }
