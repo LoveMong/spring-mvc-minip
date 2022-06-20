@@ -76,8 +76,10 @@ public class RegisterController {
     @PostMapping("/save")
     public String save(@Validated MemberDto memberDto, BindingResult result) throws Exception {
 
-        log.info("result : ", result.getAllErrors());
-        log.info("memberDto : ", memberDto.toString());
+        log.info("result = " + result);
+        log.info("memberDto " + memberDto);
+
+
 
 
 //        수동 검증 - validator를 직접 생성, validate()를 직접 호출

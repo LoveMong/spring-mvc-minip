@@ -41,11 +41,11 @@ public class MemberValidator implements Validator {
         String member_id = memberDto.getMember_id();
 
 //      memberId가 null이거나 빈 문자열이면 memberId 필드에서 required 라는 error 코드 저장
-      if (member_id == null || "".equals(member_id.trim())) {
-         errors.rejectValue("member_id", "required", "id는 필수값 입니다.");
-      }
+//      if (member_id == null || "".equals(member_id.trim())) {
+//         errors.rejectValue("member_id", "required", "id는 필수값 입니다.");
+//      }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required", "id는 필수값 입니다.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required");
 
 
 
