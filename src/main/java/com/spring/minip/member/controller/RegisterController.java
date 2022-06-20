@@ -3,11 +3,13 @@ package com.spring.minip.member.controller;
 import com.spring.minip.common.validation.MemberValidator;
 import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -72,6 +75,10 @@ public class RegisterController {
 
     @PostMapping("/save")
     public String save(@Validated MemberDto memberDto, BindingResult result) throws Exception {
+
+        log.info("result : ", result.getAllErrors());
+        log.info("memberDto : ", memberDto.toString());
+
 
 //        수동 검증 - validator를 직접 생성, validate()를 직접 호출
 //        MemberValidator memberValidator = new MemberValidator();
