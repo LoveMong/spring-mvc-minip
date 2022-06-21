@@ -1,38 +1,34 @@
 package com.spring.minip.common.validation;
 
 import com.spring.minip.member.domain.MemberDto;
-import com.sun.javadoc.MemberDoc;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.validation.BeanPropertyBindingResult;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 
-import javax.naming.Binding;
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.ValidatorFactory;
-
-import java.util.Arrays;
-import java.util.Set;
-
-import static org.junit.Assert.*;
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
 public class MemberValidatorTest {
 
-    private static MemberValidator memberValidator;
+
+    private MemberValidator memberValidator;
 
 
     @Test
-    public void validation () throws Exception {
+    public void validation() throws Exception {
         //given
-        MemberDto memberDto = new MemberDto("", "adfsaf", "1233", "eerwer@werwe");
+        MemberDto memberDto = new MemberDto("asdf", "adfsaf", "1233", "eerwer@werwe");
         Errors errors = new BeanPropertyBindingResult(memberDto, "memberDto");
 
         //when
         memberValidator.validate(memberDto, errors);
 
         //then
+
+
 
 
     }

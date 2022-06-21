@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
  *  로그인 기능 컨트롤을 위한 클래스 *
  * @Project : spring-minip
  * @Date : 2022-06-09
- * @author : L *
+ * @Author : L
  */
 @Controller
 @RequestMapping("/login")

@@ -2,12 +2,19 @@ package com.spring.minip.common.validation;
 
 import com.spring.minip.member.domain.MemberDto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import java.util.regex.Pattern;
+
 /**
  * MemberDto 객체 검증 클래스
+ *
+ * @Project : spring-minip
+ * @Date : 2022-06-21
+ * @Author L
  */
 @Slf4j
 public class MemberValidator implements Validator {
@@ -39,17 +46,59 @@ public class MemberValidator implements Validator {
         MemberDto memberDto = (MemberDto)target;
 
         String member_id = memberDto.getMember_id();
+        String member_pwd = memberDto.getMember_pwd();
+        String member_name = memberDto.getMember_name();
+        String member_eamil = memberDto.getMember_email();
+
 
 //      memberId가 null이거나 빈 문자열이면 memberId 필드에서 required 라는 error 코드 저장
 //      if (member_id == null || "".equals(member_id.trim())) {
 //         errors.rejectValue("member_id", "required", "id는 필수값 입니다.");
 //      }
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required");
+
+//      회원 아이디 유효성 검사
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required", "공백 오류");
+        if (member_id.length() <= 2 || member_id.length() >= 10) {
+            errors.rejectValue("member_id", "length", "아이디 길이 오류");
+        }
+        if (!idCheck(member_id)) {
+            errors.rejectValue("member_id", "form", "아이디 형식 오류");
+        }
+
+//      회원 이름 유효성 검사
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_name", "required", "공백 오류");
+        if (member_name.length() <= 1 || member_name.length() >= 10) {
+            errors.rejectValue("member_name", "length", "이름 길이 오류");
+        }
 
 
+//      회원 비밀번호 유효성 검사
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_pwd", "required", "공백 오류");
+        if (!pwdCheck(member_pwd)) {
+            errors.rejectValue("member_pwd", "form", "비밀번호 형식 오류");
+        }
+
+
+//      회원 이메일 형식 검사
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_email", "required", "공백 오류");
+        if (!emailCheck(member_eamil)) {
+            errors.rejectValue("member_email", "form", "이메일 형식 오류");
+        }
 
 
 
     }
+
+
+    private boolean idCheck(String member_id) { // 아이디에 특수문자 포함 그리고 공백 또는 특수문자 포함 시 false 반환
+        return Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\\s]*$", member_id) && Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$", member_id);
+    }
+    private boolean pwdCheck(String member_pwd) { // 비밀번호는 영문 대소문자와 숫자 4~12자리로 입력 아니면 false 반환
+        return Pattern.matches("/^[a-zA-z0-9]{4,12}$/", member_pwd);
+    }
+    private boolean emailCheck(String member_email) { // 이메일 형식 검사 아니면 false 반환
+        return Pattern.matches("\\w+@\\w+\\.\\w+(\\.\\w+)?", member_email);
+    }
+
 }

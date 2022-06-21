@@ -13,8 +13,6 @@ X
 (src/main/webapp/WEB-INF/views/footer.jsp,9/a/9a549875954782aadfd152200a74f49acf667acb
 ]
 -src/main/webapp/WEB-INF/views/error/error.jsp,a/0/a03ddc9a7b4f0307a1a7103fe927751a0d3ac78f
-n
->src/main/java/com/spring/minip/common/error/GlobalCatcher.java,3/a/3aff84c84177545574eb1e0b53d18ddbc48e78d7
 h
 8src/main/java/com/spring/minip/member/dao/MemberDao.java,3/f/3f80142593004a1ccecfd180165fc8d9ff138007
 p
@@ -29,5 +27,3 @@ l
 <src/main/java/com/spring/minip/member/dao/MemberDaoImpl.java,8/1/81467c8621564adecde21e3b3a451f59dd83f4c2
 t
 Dsrc/main/java/com/spring/minip/member/service/MemberServiceImpl.java,d/2/d2f178e9189cc7598691f5bcb843967147f31f40
-t
-Dsrc/main/java/com/spring/minip/member/controller/HomeController.java,d/8/d88320a61b08de4e2ac2632ce2bac2047f73342c
