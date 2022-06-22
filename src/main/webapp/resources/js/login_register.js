@@ -37,31 +37,31 @@ $(document).ready(function(){
 
         id = document.getElementById("member_id").value;
 
-        // if (id === "") {
-        //     setMessage_Join("아이디를 입력해주세요.", jrm.member_id)
-        //     jrm.member_id.focus();
-        //     return false;
-        // }
-        // if (id.replace(blank_pattern, '') === "") {
-        //     setMessage_Join("아이디에 공백이 포함되었습니다.", jrm.member_id)
-        //     jrm.member_id.focus();
-        //     return false;
-        // }
-        // if (blank_pattern_S.test(id) === true) {
-        //     setMessage_Join("아이디에 공백이 포함되었습니다.", jrm.member_id)
-        //     jrm.member_id.focus();
-        //     return false;
-        // }
-        // if (special_pattern.test(id) === true) {
-        //     setMessage_Join("아이디에 특수문자가 포함되었습니다.", jrm.member_id)
-        //     jrm.member_id.focus();
-        //     return false;
-        // }
-        // if (id.search(/\W|\s/g) > -1) {
-        //     setMessage_Join("아이디에 공백 또는 특수문자가 포함되었습니다.", jrm.member_id)
-        //     jrm.member_id.focus();
-        //     return false;
-        // }
+        if (id === "") {
+            setMessage_Join("아이디를 입력해주세요.", jrm.member_id)
+            jrm.member_id.focus();
+            return false;
+        }
+        if (id.replace(blank_pattern, '') === "") {
+            setMessage_Join("아이디에 공백이 포함되었습니다.", jrm.member_id)
+            jrm.member_id.focus();
+            return false;
+        }
+        if (blank_pattern_S.test(id) === true) {
+            setMessage_Join("아이디에 공백이 포함되었습니다.", jrm.member_id)
+            jrm.member_id.focus();
+            return false;
+        }
+        if (special_pattern.test(id) === true) {
+            setMessage_Join("아이디에 특수문자가 포함되었습니다.", jrm.member_id)
+            jrm.member_id.focus();
+            return false;
+        }
+        if (id.search(/\W|\s/g) > -1) {
+            setMessage_Join("아이디에 공백 또는 특수문자가 포함되었습니다.", jrm.member_id)
+            jrm.member_id.focus();
+            return false;
+        }
 
 
         let url = "/register/checkId?member_id=" + document.jrm.member_id.value;

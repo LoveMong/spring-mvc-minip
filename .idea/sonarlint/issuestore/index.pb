@@ -21,9 +21,22 @@ u
 Esrc/main/java/com/spring/minip/common/validation/GlobalValidator.java,e/d/edc485602411cd8d60dbc937501f90adc5bc4ffc
 W
 'src/main/webapp/resources/css/login.css,b/d/bd3758c4f2a5584161aa1c00e23644c88123c973
-`
-0src/main/webapp/WEB-INF/views/member/checkID.jsp,0/d/0d2f3e70baf1768a529f471905524fbc1762574b
 l
 <src/main/java/com/spring/minip/member/dao/MemberDaoImpl.java,8/1/81467c8621564adecde21e3b3a451f59dd83f4c2
 t
 Dsrc/main/java/com/spring/minip/member/service/MemberServiceImpl.java,d/2/d2f178e9189cc7598691f5bcb843967147f31f40
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+x
+Hsrc/test/java/com/spring/minip/member/service/MemberServiceImplTest.java,c/0/c0e8d163a193dbc4ec2fcb73307aad6425d275b5
+O
+src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+b
+2src/main/webapp/WEB-INF/views/member/loginForm.jsp,0/9/09f2266150621b4eefcff30d8d5f3364872bb614
+k
+;src/main/java/com/spring/minip/member/domain/MemberDto.java,3/4/3446b5342507a0ed487d9030d01999255f2a477b
+^
+.src/main/webapp/resources/js/login_register.js,a/2/a28ba729948bd5fb8603806c2a2af57d34bd1fe9
+n
+>src/main/java/com/spring/minip/common/error/GlobalCatcher.java,3/a/3aff84c84177545574eb1e0b53d18ddbc48e78d7

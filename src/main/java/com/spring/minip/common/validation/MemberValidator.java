@@ -2,7 +2,6 @@ package com.spring.minip.common.validation;
 
 import com.spring.minip.member.domain.MemberDto;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -18,7 +17,7 @@ import java.util.regex.Pattern;
  */
 @Slf4j
 public class MemberValidator implements Validator {
-//  (Interface)validator : 데이터를 검증하기 위한 인터페이스
+//  (Interface)Validator : 데이터를 검증하기 위한 인터페이스
 
     /**
      * 매개변수로 들어온 클래스가 이 검증기로 검증가능한 객체인지 알려주는 메서드
@@ -95,6 +94,7 @@ public class MemberValidator implements Validator {
         return Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\\s]*$", member_id) && Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$", member_id);
     }
     private boolean pwdCheck(String member_pwd) { // 비밀번호는 영문 대소문자와 숫자 4~12자리로 입력 아니면 false 반환
+
         return Pattern.matches("/^[a-zA-z0-9]{4,12}$/", member_pwd);
     }
     private boolean emailCheck(String member_email) { // 이메일 형식 검사 아니면 false 반환
