@@ -32,11 +32,11 @@ x
 Hsrc/test/java/com/spring/minip/member/service/MemberServiceImplTest.java,c/0/c0e8d163a193dbc4ec2fcb73307aad6425d275b5
 O
 src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
-b
-2src/main/webapp/WEB-INF/views/member/loginForm.jsp,0/9/09f2266150621b4eefcff30d8d5f3364872bb614
-k
-;src/main/java/com/spring/minip/member/domain/MemberDto.java,3/4/3446b5342507a0ed487d9030d01999255f2a477b
-^
-.src/main/webapp/resources/js/login_register.js,a/2/a28ba729948bd5fb8603806c2a2af57d34bd1fe9
 n
 >src/main/java/com/spring/minip/common/error/GlobalCatcher.java,3/a/3aff84c84177545574eb1e0b53d18ddbc48e78d7
+_
+/src/main/webapp/WEB-INF/spring/root-context.xml,5/2/528c08e315052712c6de729d808bc541b1c5b506
+p
+@src/test/java/com/spring/minip/member/dao/MemberDaoImplTest.java,d/d/ddf2f1aa56113850e462dedc2225c32f3a47d9ce
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec

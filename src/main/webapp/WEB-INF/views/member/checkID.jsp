@@ -17,7 +17,7 @@
     <input type="text" name="member_id" id="member_id" tabindex="1" class="form-control" placeholder="ID" value="${memberId}">
   </div>
   <div class="form-group">
-    <input type="submit" tabindex="2" class="form-control" placeholder="Submit" value="중복 체크">
+    <input type="button" id="checkId" tabindex="2" class="form-control" placeholder="Submit" value="중복 체크">
   </div>
   <div class="form-group text-center" style="color: red">
     <c:if test="${result == 1 }">

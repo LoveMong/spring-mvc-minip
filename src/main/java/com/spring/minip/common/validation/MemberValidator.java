@@ -57,12 +57,12 @@ public class MemberValidator implements Validator {
 
 
 //      회원 아이디 유효성 검사
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required", "공백 오류");
-        if (member_id.length() <= 2 || member_id.length() >= 10) {
-            errors.rejectValue("member_id", "length", "아이디 길이 오류");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "member_id", "required", "아이디를 입력해주세요.");
+        if (member_id.length() < 4 || member_id.length() > 12) {
+            errors.rejectValue("member_id", "length", "아이디의 길이는 4 ~ 12 사이로 입력해주세요.");
         }
         if (!idCheck(member_id)) {
-            errors.rejectValue("member_id", "form", "아이디 형식 오류");
+            errors.rejectValue("member_id", "form", "아이디에 공백 또는 특스문자가 입력되었습니다.");
         }
 
 //      회원 이름 유효성 검사
@@ -94,8 +94,7 @@ public class MemberValidator implements Validator {
         return Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\\s]*$", member_id) && Pattern.matches("^[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$", member_id);
     }
     private boolean pwdCheck(String member_pwd) { // 비밀번호는 영문 대소문자와 숫자 4~12자리로 입력 아니면 false 반환
-
-        return Pattern.matches("/^[a-zA-z0-9]{4,12}$/", member_pwd);
+        return Pattern.matches("^[a-zA-z0-9]{4,12}$", member_pwd);
     }
     private boolean emailCheck(String member_email) { // 이메일 형식 검사 아니면 false 반환
         return Pattern.matches("\\w+@\\w+\\.\\w+(\\.\\w+)?", member_email);

@@ -1,9 +1,7 @@
 package com.spring.minip.member.domain;
 
-import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+
 import java.util.Date;
 import java.util.Objects;
 

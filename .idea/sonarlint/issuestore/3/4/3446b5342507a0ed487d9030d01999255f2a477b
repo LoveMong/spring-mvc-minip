@@ -1,31 +1,0 @@
-
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÄ•ñıÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÄ•ñıÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÄ•ñıÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÄ•ñıÿÿÿÿ
-m	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âĞ•ô8Şì”‹˜0
-m	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß’ïœ8Şì”‹˜0
-r	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öµ«×şÿÿÿÿ8ßì”‹˜0
-m	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëô–Ô8ßì”‹˜0
-r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÕÂŒşÿÿÿÿ8ßì”‹˜0
-n	java:S116"TRename this field "member_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±™ü¢úÿÿÿÿ
-j	java:S116"VRename this field "member_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶µl
-o	java:S116"URename this field "member_pwd" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅìºÊşÿÿÿÿ
-q	java:S116"WRename this field "member_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¡¦úÿÿÿÿ
-m	java:S116"XRename this field "register_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬…ÂÒ
-o	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ã‰‰øÿÿÿÿ8çì”‹˜0
-j	java:S100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âĞ•ô8éì”‹˜0
-j	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¡Î©8êì”‹˜0
-j	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß’ïœ8êì”‹˜0
-o	java:S1005"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢·Õ¼ùÿÿÿÿ8êì”‹˜0
-o	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öµ«×şÿÿÿÿ8ëì”‹˜0
-j	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùã«»8ëì”‹˜0
-j	java:S100A"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëô–Ô8ëì”‹˜0
-i	java:S100E"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©›ã88ëì”‹˜0
-o	java:S100I"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÕÂŒşÿÿÿÿ8ìì”‹˜0
-J
-java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8Ä”‹˜0
-a
-java:S1128"?Remove this unused import 'javax.validation.constraints.Email'.(¸àô¹üÿÿÿÿ8®ø‹˜0
-d
-java:S1128"BRemove this unused import 'javax.validation.constraints.NotBlank'.(µã‡ıÿÿÿÿ8®ø‹˜0
