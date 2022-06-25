@@ -34,13 +34,69 @@ public class MemberDaoImplTest {
     }
 
     @Test
+    public void deleteAll () throws Exception {
+        //given
+        for (int i = 0; i < 10; i++) {
+            MemberDto memberDto = MemberDto.builder()
+                    .member_id("mong" + i)
+                    .member_name("몽이")
+                    .member_pwd("1234")
+                    .member_email("2222@222.net")
+                    .build();
+
+            memberDao.insertMember(memberDto);
+        }
+
+        //when
+        memberDao.deleteAll();
+
+        //then
+        MemberDto memberDto = MemberDto.builder()
+                .member_id("mong1")
+                .build();
+        MemberDto memberDto1 = memberDao.selectMember(memberDto.getMember_id());
+        assertNull(memberDto1);
+
+    }
+
+    @Test
+    public void deleteMember () throws Exception {
+        //given
+        memberDao.deleteAll();
+
+        for (int i = 0; i < 5; i++) {
+            MemberDto memberDto = MemberDto.builder()
+                    .member_id("mong" + i)
+                    .member_name("몽이")
+                    .member_pwd("1234")
+                    .member_email("2222@222.net")
+                    .build();
+
+            memberDao.insertMember(memberDto);
+        }
+
+        //when
+        memberDao.deleteMember("mong2");
+
+        //then
+        MemberDto memberDto = memberDao.selectMember("mong2");
+        assertNull(memberDto);
+
+
+    }
+
+
+
+    @Test
     public void insertMember () throws Exception {
         //given
+        memberDao.deleteAll();
+
         MemberDto memberDto = MemberDto.builder()
-                .member_id("mong2")
-                .member_name("몽")
+                .member_id("mong1")
+                .member_name("몽이이")
                 .member_pwd("1234")
-                .member_email("2323@3232")
+                .member_email("2323@3232.net")
                 .build();
         System.out.println("memberDto = " + memberDto);
         //when

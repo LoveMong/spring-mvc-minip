@@ -23,4 +23,15 @@ public class MemberDaoImpl implements MemberDao {
         session.insert(namespace + "insertMember", dto);
     }
 
+    @Override
+    public void deleteAll() throws Exception {
+        session.delete(namespace + "deleteAll");
+    }
+
+    @Override
+    public void deleteMember(String memberId) throws Exception {
+        session.delete(namespace + "deleteMember", memberId);
+    }
+
+
 }

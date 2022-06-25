@@ -10,4 +10,8 @@ public interface MemberDao {
 
 //  회원 가입
     void insertMember(MemberDto dto) throws Exception;
+
+    void deleteAll() throws Exception;
+
+    void deleteMember(String memberId) throws Exception;
 }
