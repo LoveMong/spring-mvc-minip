@@ -5,7 +5,6 @@ import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @Slf4j
-@Controller
+@RestController
 @RequestMapping("/register")
 public class RegisterController {
 
@@ -43,7 +42,6 @@ public class RegisterController {
      * @throws Exception
      */
     @GetMapping("/checkId")
-    @ResponseBody
     public int checkId(@RequestParam("member_id") String id) throws Exception {
         log.info("member_id : " + id);
         int result = 0;
@@ -67,7 +65,6 @@ public class RegisterController {
      * @throws Exception
      */
     @PostMapping("/save")
-    @ResponseBody
     public int save(@Validated MemberDto memberDto, BindingResult result) throws Exception {
         int ajaxResult = 0;
         log.info("result = " + result);
@@ -89,6 +86,12 @@ public class RegisterController {
 
     }
 
+    /**
+     * 아이디 중복 여부 확인 메소드
+     * @param memberId 확인이 필요한 아디 매개변수
+     * @return 확인이 필요한 아이디가 DB 정보에 등록되어 있지 않다면 ture 반환
+     * @throws Exception
+     */
     private boolean check(String memberId) throws Exception {
         MemberDto memberDto = memberService.checkMember(memberId);
         return memberDto == null;

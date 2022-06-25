@@ -66,7 +66,6 @@ $(document).ready(function(){
             $.ajax({
                 type : 'get', // 요청 메서드
                 url : '/register/checkId', // 요청 URI
-                dataType : 'json', // 전송할 데이터의 타입
                 data : {member_id : id}, // 서버로 전송할 데이터
                 success : function (result) {
                     if(result === 1) {
@@ -160,7 +159,6 @@ function joinCheck() {
         $.ajax({
             type : 'post', // 요청 메서드
             url : '/register/save', // 요청 URI
-            dataType : 'json', // 전송할 데이터의 타입
             data : {member_id : id,
                     member_name : name,
                     member_pwd : jpwd,

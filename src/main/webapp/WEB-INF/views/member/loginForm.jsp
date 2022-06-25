@@ -44,14 +44,15 @@
                                     </c:if>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="memberId" id="memberId" tabindex="1" class="form-control" placeholder="ID" value=""/>
+                                    <input type="text" name="memberId" id="memberId" tabindex="1" class="form-control" placeholder="ID" value="${cookie.memberId.value}"/>
+                                    <input type="hidden" name="toURL" value="${param.toURL}"/>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="memberPwd" id="memberPwd" tabindex="2" class="form-control" placeholder="Password"/>
                                 </div>
                                 <div class="form-group text-center">
-                                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember"/>
-                                    <label for="remember"></label> 아이디 저장
+                                    <input type="checkbox" tabindex="3" class="" value="on" name="rememberId" id="rememberId" ${empty cookie.memberId.value ? "" : "checked"}/>
+                                    <label for="rememberId"></label> 아이디 저장
                                 </div>
                                 <div class="form-group">
                                     <div class="row">

@@ -2,6 +2,7 @@ package com.spring.minip.member.controller;
 
 import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import java.nio.charset.StandardCharsets;
  * @Date : 2022-06-09
  * @Author : L
  */
+@Slf4j
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -37,6 +39,19 @@ public class LoginController {
     }
 
     /**
+     * 로그아웃 처리 메소드
+     * @param session 요청자 정보관리 HttpSession
+     * @return 메인페이지로 리다이렉트
+     */
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+//      1. 세션 종료
+        session.invalidate();
+//      2. 메인 페이지로 이동
+        return "redirect:/";
+    }
+
+    /**
      * Post 방식 요청 주소(/login)에 대한 view return 메소드
      * @param memberId 로그인 아이디 값
      * @param memberPwd 로그인 패스워드 값
@@ -49,6 +64,8 @@ public class LoginController {
     @PostMapping("/login")
     public String login(String memberId, String memberPwd, String toUrl, boolean rememberId,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
+        log.info("rememberId : " + rememberId);
+        log.info("toURL : " + toUrl);
 
 //      1. 아이디와 패스워드 확인 (loginCheck)
         if (!loginCheck(memberId, memberPwd)) {
@@ -60,7 +77,8 @@ public class LoginController {
 //      2-1. 세션 얻어오기
         HttpSession session = request.getSession();
 //      2-2. 세션에 memberId 저장
-        session.setAttribute("memberId", memberId);
+        MemberDto memberDto = memberService.checkMember(memberId);
+        session.setAttribute("memberInfo", memberDto);
 
 //      3. 로그인 화면 아이디 기억하기 check 유무에 따른 쿠키 저장 및 삭제
         if (rememberId) {

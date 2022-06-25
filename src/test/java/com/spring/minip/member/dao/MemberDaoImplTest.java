@@ -36,7 +36,12 @@ public class MemberDaoImplTest {
     @Test
     public void insertMember () throws Exception {
         //given
-        MemberDto memberDto = new MemberDto("mong2", "Lee", "1234", "222@aaaa");
+        MemberDto memberDto = MemberDto.builder()
+                .member_id("mong2")
+                .member_name("몽")
+                .member_pwd("1234")
+                .member_email("2323@3232")
+                .build();
         System.out.println("memberDto = " + memberDto);
         //when
         memberDao.insertMember(memberDto);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <body>
 
@@ -8,11 +9,11 @@
 <div class="jumbotron">
     <div class="container">
         <c:choose>
-            <c:when test="${loginUser == null }">
+            <c:when test="${memberInfo == null }">
                 <h2 class="display-3">안녕하세요, 방문자님!</h2>
             </c:when>
-            <c:when test="${loginUser != null }">
-                <h2 class="display-3">안녕하세요, ${loginUser.name}(${loginUser.userid})님!</h2>
+            <c:when test="${memberInfo != null }">
+                <h2 class="display-3">안녕하세요, ${memberInfo.member_name}(${memberInfo.member_id})님!</h2>
             </c:when>
         </c:choose>
         <p style="margin: 30px">안녕하세요. 이번에는 MiniProject로 MVC 2Model기반 JSP&Servlet을 이용한 회원관리, 상품관리, 게시판을 만들었습니다. 감사합니다. </p>
