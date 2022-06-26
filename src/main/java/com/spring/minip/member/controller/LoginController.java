@@ -4,6 +4,7 @@ import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,9 @@ public class LoginController {
 
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     /**
      * Get 방식 요청 Url(/login)에 대한 view return(loginForm) 메소드
@@ -110,7 +114,7 @@ public class LoginController {
 
         memberDto = memberService.checkMember(memberId);
 
-        return memberDto != null && memberDto.getMember_pwd().equals(memberPwd);
+        return memberDto != null && passwordEncoder.matches(memberPwd, memberDto.getMember_pwd());
 
     }
 

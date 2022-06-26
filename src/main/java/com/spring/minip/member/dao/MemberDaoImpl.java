@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MemberDaoImpl implements MemberDao {
 
+
     @Autowired
     private SqlSession session; //  SQL 명령을 수행하는데 필요한 메서드 제공(SqlSession의 주요 메서드 확인 필요)
 

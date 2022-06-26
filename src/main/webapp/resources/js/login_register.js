@@ -178,8 +178,8 @@ function joinCheck() {
 
 }
 
-function setMessage_Join(message, element){
-    document.getElementById("message_join").innerHTML = `<i class="fa fa-exclamation-circle"> ${message}</i>`;
+function setMessage_Join(joinMessage, element){
+    document.getElementById("message_join").innerHTML = `<i class="fa fa-exclamation-circle"> ${joinMessage}</i>`;
     if(element) {
         element.select();
     }

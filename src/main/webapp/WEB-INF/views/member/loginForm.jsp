@@ -75,8 +75,8 @@
 
                             <form id="register-form" action="<c:url value='/register/save'/>" method="post" role="form" style="display: none;" name="jrm">
                                 <div class="form-group text-center" id="message_join">
-                                    <c:if test="${not empty param.message}">
-                                        <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.message, "utf-8")}</i>
+                                    <c:if test="${not empty param.joinMessage}">
+                                        <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.joinMessage, "utf-8")}</i>
                                     </c:if>
                                 </div>
                                 <div class="form-group">

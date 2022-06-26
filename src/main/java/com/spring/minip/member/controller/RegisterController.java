@@ -5,6 +5,7 @@ import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
@@ -24,6 +25,9 @@ public class RegisterController {
 
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
 
     /**
@@ -78,6 +82,8 @@ public class RegisterController {
         if (result.hasErrors()) {
             ajaxResult =  -1;
         } else {
+            String pwdBcrypt = passwordEncoder.encode(memberDto.getMember_pwd());
+            memberDto.setMember_pwd(pwdBcrypt);
             memberService.registerMember(memberDto);
             ajaxResult = 1;
         }

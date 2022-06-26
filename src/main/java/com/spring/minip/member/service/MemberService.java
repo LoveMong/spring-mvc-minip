@@ -7,5 +7,8 @@ public interface MemberService {
 
     void registerMember(MemberDto memberDto) throws Exception;
 
-//    void deleteMember(String memberId) throws Exception;
+    void deleteMember(String memberId) throws Exception;
+
+    void deleteAll() throws Exception;
+
 }

@@ -20,4 +20,15 @@ public class MemberServiceImpl implements MemberService {
     public void registerMember(MemberDto memberDto) throws Exception {
         memberDao.insertMember(memberDto);
     }
+
+    @Override
+    public void deleteMember(String memberId) throws Exception {
+        memberDao.deleteMember(memberId);
+    }
+
+    @Override
+    public void deleteAll() throws Exception {
+        memberDao.deleteAll();
+    }
+
 }
