@@ -99,11 +99,11 @@ $(document).ready(function(){
 // Login 유효성 검사
 function loginCheck() {
 
-    if (document.frm.memberId.value.length == 0) {
+    if (document.frm.memberId.value.length === 0) {
         setMessage_Login('아이디를 입력해주세요.', frm.member_id)
         return false;
     }
-    if (document.frm.memberPwd.value == "") {
+    if (document.frm.memberPwd.value === "") {
         setMessage_Login('패스워드를 입력해주세요.', frm.memberPwd)
         return false;
     }
@@ -188,43 +188,60 @@ function setMessage_Join(joinMessage, element){
 
 function editCheck() {
 
-    let epwd = document.getElementById('epwd').value;
-    let ecpwd = document.getElementById('ecpwd').value;
+    id = document.getElementById("member_id").value;
+    name = document.getElementById("member_name").value;
+    jpwd = document.getElementById("member_pwd").value;
+    cpwd = document.getElementById("member_cpwd").value;
+    email = document.getElementById("member_email").value;
 
 
-    if (document.prm.userid.value.length == 0) {
-        alert("아이디를 입력해주세요.");
-        prm.userid.focus();
-        return false;
+    if (email === "") {
+        setMessage_edit("이메일을 입력해주세요.", prm.member_email);
     }
-    if (document.prm.name.value.length == 0) {
-        alert("이름을 입력해주세요.");
-        prm.name.focus();
-        return false;
+    else if (email_pattern.test(email) === false) {
+        setMessage_edit(("이메일 형식이 아닙니다.", prm.member_email);
     }
-    if (document.prm.email.value.length == 0) {
-        alert("이메일을 입력해주세요.");
-        prm.email.focus();
-        return false;
+    else if (jpwd === "") {
+        setMessage_edit(("비밀번호를 입력해주세요.", prm.member_jpwd);
     }
-    if (document.prm.epwd.value == "") {
-        alert("암호는 반드시 입력해야 합니다.");
-        prm.epwd.focus();
-        return false;
+    else if (password_pattern.test(jpwd) === false) {
+        setMessage_edit(("비밀번호는 영문 대소문자와 숫자 4~12자리로 입력해주세요.", prm.member_jpwd);
     }
-    if (document.prm.ecpwd.value == "") {
-        alert("비밀번호를 확인해주세요.");
-        prm.ecpwd.focus();
-        return false;
+    else if (cpwd === "") {
+        setMessage_edit(("비밀번호를 확인해주세요.", prm.member_cpwd);
     }
-    if (epwd != ecpwd) {
-        alert("비밀번호를 확인해주세요.");
-        prm.cpwd.focus();
-        return false;
+    else if (jpwd !== cpwd) {
+        setMessage_edit(("비밀번호가 일치하지 않습니다.", prm.member_cpwd);
+    } else {
+        $.ajax({
+            type : 'post', // 요청 메서드
+            url : '/login/edit', // 요청 URI
+            data : {member_id : id,
+                member_name : name,
+                member_pwd : jpwd,
+                member_email : email}, // 서버로 전송할 데이터
+            success : function (result) {
+                if(result === 1) {
+                    alert("회원정보 수정 완료. 다시 로그인 해주세요.");
+                    location.href="login/login";
+                } else {
+                    alert("회원정보 수정에 실패했습니다. 다시 시도해주세요.");
+                }
+
+            },
+        })
     }
 
-    return true;
 
+
+
+}
+
+function setMessage_edit(joinMessage, element){
+    document.getElementById("message_join").innerHTML = `<i class="fa fa-exclamation-circle"> ${joinMessage}</i>`;
+    if(element) {
+        element.select();
+    }
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------

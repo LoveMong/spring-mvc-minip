@@ -30,9 +30,13 @@
             <li class="nav-item active">
                 <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/member/edit.do?userid=${loginUser.userid}">Edit Profile</a>
-            </li>
+            <c:choose>
+                <c:when test="${memberInfo.member_id != null }">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<c:url value='/login/edit?memberId=${memberInfo.member_id}'/>">Edit Profile</a>
+                    </li>
+                </c:when>
+            </c:choose>
             <c:choose>
                 <c:when test="${memberInfo.member_id == null }">
                     <li class="nav-item">
@@ -44,7 +48,6 @@
                         <a class="nav-link" href="<c:url value='/login/logout'/>">Logout</a>
                     </li>
                 </c:when>
-
             </c:choose>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
