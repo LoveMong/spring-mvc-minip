@@ -34,5 +34,10 @@ public class MemberDaoImpl implements MemberDao {
         session.delete(namespace + "deleteMember", memberId);
     }
 
+    @Override
+    public void updateMember(MemberDto memberDto) throws Exception {
+        session.update(namespace + "updateMember", memberDto);
+    }
+
 
 }

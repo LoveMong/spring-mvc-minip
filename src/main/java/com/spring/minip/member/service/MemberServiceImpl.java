@@ -31,4 +31,9 @@ public class MemberServiceImpl implements MemberService {
         memberDao.deleteAll();
     }
 
+    @Override
+    public void editMember(MemberDto memberDto) throws Exception {
+        memberDao.updateMember(memberDto);
+    }
+
 }

@@ -14,4 +14,6 @@ public interface MemberDao {
     void deleteAll() throws Exception;
 
     void deleteMember(String memberId) throws Exception;
+
+    void updateMember(MemberDto memberDto) throws Exception;
 }

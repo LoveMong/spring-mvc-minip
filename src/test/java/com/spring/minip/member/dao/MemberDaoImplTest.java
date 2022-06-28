@@ -13,7 +13,7 @@ import java.lang.reflect.Member;
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml", "file:src/main/webapp/WEB-INF/spring/**/spring-security.xml"})
 public class MemberDaoImplTest {
 
     @Autowired
@@ -108,6 +108,43 @@ public class MemberDaoImplTest {
 
 
     }
+
+    @Test
+    public void updateMember() throws Exception {
+        //given
+
+        memberDao.deleteAll();
+
+        MemberDto memberDto = MemberDto.builder()
+                .member_id("updateTest")
+                .member_name("test")
+                .member_pwd("1234")
+                .member_email("test@test.net")
+                .build();
+
+        memberDao.insertMember(memberDto);
+
+        MemberDto updateDto = MemberDto.builder()
+                .member_id("updateTest")
+                .member_name("test")
+                .member_pwd("update")
+                .member_email("update@test.net")
+                .build();
+        //when
+
+        memberDao.updateMember(updateDto);
+
+
+        //then
+
+        MemberDto resultMember = memberDao.selectMember("updateTest");
+
+        assertEquals(resultMember.getMember_pwd(), "update");
+        assertEquals(resultMember.getMember_email(), "update@test.net");
+
+
+    }
+
 
 
 }

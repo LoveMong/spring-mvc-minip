@@ -32,10 +32,10 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form id="login-form" action="/member/edit.do" method="post" role="form" style="display: block;" name="prm">
-                                <div class="form-group text-center" id="message">
-                                    <c:if test="${not empty param.message}">
-                                        <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.message, "utf-8")}</i>
+                            <form id="login-form" action="" method="" role="form" style="display: block;" name="prm">
+                                <div class="form-group text-center" id="message_edit">
+                                    <c:if test="${not empty param.editMessage}">
+                                        <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.editMessage, "utf-8")}</i>
                                     </c:if>
                                 </div>
                                 <div class="form-group">

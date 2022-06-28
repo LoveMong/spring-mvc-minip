@@ -199,19 +199,19 @@ function editCheck() {
         setMessage_edit("이메일을 입력해주세요.", prm.member_email);
     }
     else if (email_pattern.test(email) === false) {
-        setMessage_edit(("이메일 형식이 아닙니다.", prm.member_email);
+        setMessage_edit("이메일 형식이 아닙니다.", prm.member_email);
     }
     else if (jpwd === "") {
-        setMessage_edit(("비밀번호를 입력해주세요.", prm.member_jpwd);
+        setMessage_edit("비밀번호를 입력해주세요.", prm.member_jpwd);
     }
     else if (password_pattern.test(jpwd) === false) {
-        setMessage_edit(("비밀번호는 영문 대소문자와 숫자 4~12자리로 입력해주세요.", prm.member_jpwd);
+        setMessage_edit("비밀번호는 영문 대소문자와 숫자 4~12자리로 입력해주세요.", prm.member_jpwd);
     }
     else if (cpwd === "") {
-        setMessage_edit(("비밀번호를 확인해주세요.", prm.member_cpwd);
+        setMessage_edit("비밀번호를 확인해주세요.", prm.member_cpwd);
     }
     else if (jpwd !== cpwd) {
-        setMessage_edit(("비밀번호가 일치하지 않습니다.", prm.member_cpwd);
+        setMessage_edit("비밀번호가 일치하지 않습니다.", prm.member_cpwd);
     } else {
         $.ajax({
             type : 'post', // 요청 메서드
@@ -223,7 +223,7 @@ function editCheck() {
             success : function (result) {
                 if(result === 1) {
                     alert("회원정보 수정 완료. 다시 로그인 해주세요.");
-                    location.href="login/login";
+                    location.href="login";
                 } else {
                     alert("회원정보 수정에 실패했습니다. 다시 시도해주세요.");
                 }
@@ -237,8 +237,8 @@ function editCheck() {
 
 }
 
-function setMessage_edit(joinMessage, element){
-    document.getElementById("message_join").innerHTML = `<i class="fa fa-exclamation-circle"> ${joinMessage}</i>`;
+function setMessage_edit(editMessage, element){
+    document.getElementById("message_edit").innerHTML = `<i class="fa fa-exclamation-circle"> ${editMessage}</i>`;
     if(element) {
         element.select();
     }

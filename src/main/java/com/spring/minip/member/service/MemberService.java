@@ -11,4 +11,6 @@ public interface MemberService {
 
     void deleteAll() throws Exception;
 
+    void editMember(MemberDto memberDto) throws Exception;
+
 }
