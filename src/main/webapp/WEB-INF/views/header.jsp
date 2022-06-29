@@ -67,7 +67,7 @@
                 </c:when>
                 <c:when test="${memberInfo.member_id != null }">
                     <li class="nav-item" style="text-align: left;">
-                        안녕하세요, ${memberInfo.member_name}(${membeInfo.member_id})님
+                        안녕하세요, ${memberInfo.member_name}(${memberInfo.member_id})님
                     </li>
                 </c:when>
             </c:choose>
