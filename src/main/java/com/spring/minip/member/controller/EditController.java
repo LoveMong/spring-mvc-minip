@@ -1,5 +1,6 @@
 package com.spring.minip.member.controller;
 
+import com.spring.minip.common.validation.MemberValidator;
 import com.spring.minip.member.domain.MemberDto;
 import com.spring.minip.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 
@@ -28,6 +30,18 @@ public class EditController {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+
+
+    /**
+     * 해당 Controler로 들어오는 요청에 대한 추가적인 설정 메소드
+     * @param binder validator 설정을 위한 매개변수
+     */
+    @InitBinder // 특정 컨트롤러에서 바인딩 또는 검증 설정 변경
+    public void initBinder(WebDataBinder binder) {
+        binder.setValidator(new MemberValidator()); // MemberValidator를 로컬 validator로 등록(Controller 내에서만 사용 가능)
+    }
 
     /**
      * Get 방식 요청 Url(/edit)에 대한 view return(editForm) 메소드
