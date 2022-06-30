@@ -54,7 +54,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="">MEMBER</a>
                     <a class="dropdown-item" href="/product/list.do">PRODUCT</a>
-                    <a class="dropdown-item" href="/board/list.do">BOARD</a>
+                    <a class="dropdown-item" href="<c:url value='/board/list'/>">BOARD</a>
                 </div>
             </li>
         </ul>

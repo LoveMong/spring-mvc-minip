@@ -50,7 +50,7 @@
                 &#183; 게시글 리스트 Paging 처리 <br>
                 &#183; Bootstrap Example Template CSS 적용
             </p>
-            <p><a class="btn btn-secondary" href="/board/list.do" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<c:url value='/board/list'/>" role="button">View details &raquo;</a></p>
         </div>
     </div>
 
