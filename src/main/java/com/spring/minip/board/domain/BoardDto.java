@@ -21,6 +21,8 @@ public class BoardDto {
 
     private String board_writer;
 
+    private String board_content;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date register_date;
 

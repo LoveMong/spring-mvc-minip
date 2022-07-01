@@ -29,7 +29,7 @@
         <c:forEach var="board" items="${boardList}">
             <tr class="record">
                 <td>${board.board_num}</td>
-                <td><a href="/board/view.do?num=${board.board_num}">${board.board_title}</a></td>
+                <td id="checkLogin"><a href="<c:url value='/board/content?board_num=${board.board_num}'/>">${board.board_title}</a></td>
                 <td>${board.board_title}</td>
                 <td><fmt:formatDate value="${board.register_date}"/></td>
                 <td>${board.board_hits}</td>

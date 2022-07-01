@@ -11,4 +11,6 @@ public interface BoardService {
     List<BoardDto> boardList(Map map) throws Exception;
 
     int boardCount() throws Exception;
+
+    BoardDto boardContent(int board_num) throws Exception;
 }

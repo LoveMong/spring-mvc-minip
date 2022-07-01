@@ -12,8 +12,6 @@ e
 0src/main/webapp/WEB-INF/views/member/checkID.jsp,0/d/0d2f3e70baf1768a529f471905524fbc1762574b
 Z
 *src/main/webapp/resources/css/shopping.css,2/c/2c545e966aa211d85eb8f9f49371059391cda390
-U
-%src/main/webapp/resources/js/board.js,3/6/36021f02a89304ce1b4911b660e9dfc9eb89c828
 W
 'src/main/webapp/resources/js/product.js,d/9/d9e87b379764bb96eba63d7d9807aa1fc772d74a
 X

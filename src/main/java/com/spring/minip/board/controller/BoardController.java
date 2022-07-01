@@ -54,4 +54,14 @@ public class BoardController {
         return "/board/boardList";
 
     }
+
+    @GetMapping("/content")
+    public String boardContent(int board_num, Model m) throws Exception{
+
+        BoardDto boardDto = boardService.boardContent(board_num);
+
+        m.addAttribute("board", boardDto);
+
+        return "board/boardContent";
+    }
 }

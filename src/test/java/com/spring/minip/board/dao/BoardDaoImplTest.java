@@ -24,12 +24,14 @@ public class BoardDaoImplTest {
     @Test
     public void insertBoard() throws Exception {
         //given
-//        boardDao.deleteAll();
+        boardDao.deleteAll();
 
         for(int i = 0; i < 180; i++){
             BoardDto boardDto = BoardDto.builder()
                     .board_title("Test" + i)
                     .board_writer("TestWriter" + i)
+                    .board_content("Korea is a peninsular region in East Asia. Since 1945," +
+                            "it has been divided between two countries at or near the 38th parallel,")
                     .build();
 
             boardDao.insertBoard(boardDto);

@@ -22,15 +22,15 @@
         FROM board
     </select>
 
-    <select id="selectBoard" parameterType="int">
+    <select id="selectBoard" parameterType="int" resultType="BoardDto">
         SELECT *
         FROM board
         WHERE board_num = #{board_num}
     </select>
 
     <insert id="insertBoard" parameterType="BoardDto">
-        INSERT INTO board(board_title, board_writer)
-        VALUES (#{board_title}, #{board_writer})
+        INSERT INTO board(board_title, board_writer, board_content)
+        VALUES (#{board_title}, #{board_writer}, #{board_content})
     </insert>
 
     <delete id="deleteAll">
