@@ -13,4 +13,6 @@ public interface BoardService {
     int boardCount() throws Exception;
 
     BoardDto boardContent(int board_num) throws Exception;
+
+    void boardRegister(BoardDto boardDto) throws Exception;
 }

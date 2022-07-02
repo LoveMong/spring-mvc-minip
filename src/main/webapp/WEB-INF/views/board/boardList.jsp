@@ -16,7 +16,7 @@
 <div id="wrap" align="center">
     <h2>게시글 목록</h2>
     <div colspan="5" style="border: white; text-align: right; margin-bottom: 10px; margin-right: 5px; margin-top: 50px">
-        <a href="/board/register.do">게시글 등록</a>
+        <a href="<c:url value='/board/register'/>">게시글 등록</a>
     </div>
     <table class="list">
         <tr style="text-align: center; font-size: 12px">

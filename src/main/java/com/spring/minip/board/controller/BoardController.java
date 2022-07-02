@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,6 +18,7 @@ import java.util.Map;
 
 /**
  * 게시판 기능 컨트롤을 위한 클래스
+ *
  * @Project : spring-minip
  * @Date : 2022-06-30
  * @Author : L
@@ -30,9 +32,10 @@ public class BoardController {
 
     /**
      * 게시판의 게시글들을 DB로 부터 불러와 페이징 작업 후 클라이언트로 return
-     * @param page 클라이언트로부터 요청 받은 매개변수(default 1)
+     *
+     * @param page     클라이언트로부터 요청 받은 매개변수(default 1)
      * @param pageSize 클라이언트로부터 요청 받은 매개변수(default 10)
-     * @param m 게시판 글 목록 객체, 페이징 설정 객체을 담은 객체
+     * @param m        게시판 글 목록 객체, 페이징 설정 객체을 담은 객체
      * @return 게시판 리스트(boardList.jsp) 페이지로 return
      * @throws Exception
      */
@@ -56,7 +59,7 @@ public class BoardController {
     }
 
     @GetMapping("/content")
-    public String boardContent(int board_num, Model m) throws Exception{
+    public String boardContent(int board_num, Model m) throws Exception {
 
         BoardDto boardDto = boardService.boardContent(board_num);
 
@@ -64,4 +67,16 @@ public class BoardController {
 
         return "board/boardContent";
     }
+
+    @GetMapping("/register")
+    public String boardRegister() {
+        return "board/boardRegister";
+    }
+
+    @PostMapping("/register")
+    public String boardRegister(BoardDto boardDto) throws Exception {
+        boardService.boardRegister(boardDto);
+        return "redirect:/board/list";
+    }
+
 }

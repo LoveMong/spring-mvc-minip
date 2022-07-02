@@ -23,6 +23,10 @@ public class BoardDto {
 
     private String board_content;
 
+    private String board_pwd;
+
+    private String board_email;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date register_date;
 

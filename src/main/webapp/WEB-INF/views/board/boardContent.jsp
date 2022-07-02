@@ -5,6 +5,9 @@
   table th {
     text-align: center;
   }
+  .content {
+    height: 300px;
+  }
 </style>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
@@ -15,7 +18,7 @@
     <tr>
       <th>작 성 자</th>
       <td>${board.board_writer}</td>
-      <th>게 시 물  번 호</th>
+      <th>번 호</th>
       <td>${board.board_num}</td>
     </tr>
     <tr>
@@ -28,7 +31,7 @@
       <th>제 목</th>
       <td colspan="3">${board.board_title}</td>
     </tr>
-    <tr>
+    <tr class="content">
       <th>내 용</th>
       <td colspan="3"><pre>${board.board_content}</pre></td>
     </tr>
