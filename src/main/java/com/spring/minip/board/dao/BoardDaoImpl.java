@@ -44,6 +44,11 @@ public class BoardDaoImpl implements BoardDao {
     }
 
     @Override
+    public void increaseHits(int board_num) {
+        session.update(namespace + "increaseHits", board_num);
+    }
+
+    @Override
     public void deleteAll() {
         session.delete(namespace + "deleteAll");
     }

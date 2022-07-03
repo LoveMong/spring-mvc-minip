@@ -28,6 +28,12 @@
         WHERE board_num = #{board_num}
     </select>
 
+    <update id="increaseHits" parameterType="int">
+        UPDATE board
+        SET board_hits = board_hits + 1
+        WHERE board_num = #{board_num}
+    </update>
+
     <insert id="insertBoard" parameterType="BoardDto">
         INSERT INTO board(board_title, board_writer, board_content, board_pwd, board_email)
         VALUES (#{board_title}, #{board_writer}, #{board_content}, #{board_pwd}, #{board_email})

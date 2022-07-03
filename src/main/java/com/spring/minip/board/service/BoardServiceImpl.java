@@ -31,7 +31,10 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public BoardDto boardContent(int board_num) throws Exception {
-        return boardDao.selectBoard(board_num);
+        BoardDto boardDto = boardDao.selectBoard(board_num);
+        boardDao.increaseHits(board_num);
+
+        return boardDto;
     }
 
     @Override

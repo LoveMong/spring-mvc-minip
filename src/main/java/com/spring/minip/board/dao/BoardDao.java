@@ -16,5 +16,8 @@ public interface BoardDao {
 
     BoardDto selectBoard(int board_num);
 
+    void increaseHits(int board_num);
+
     void deleteAll();
+
 }
