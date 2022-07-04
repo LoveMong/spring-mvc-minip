@@ -63,10 +63,36 @@ public class BoardDaoImplTest {
         //then
         assertNotNull(boardDto1);
 
+    }
+
+    @Test
+    public void increaseHits() throws Exception {
+        //given
+        boardDao.deleteAll();
+
+        for(int i = 0; i < 5; i++){
+            BoardDto boardDto = BoardDto.builder()
+                    .board_title("Test" + i)
+                    .board_writer("TestWriter" + i)
+                    .board_content("Korea is a peninsular region in East Asia. Since 1945," +
+                            "it has been divided between two countries at or near the 38th parallel,")
+                    .build();
+
+            boardDao.insertBoard(boardDto);
+        }
+
+        //when
+        boardDao.increaseHits(1);
+        BoardDto boardDto1 = boardDao.selectBoard(1);
+        //then
+       assertEquals(boardDto1.getBoard_hits(), 1);
+
+
 
 
 
     }
+
 
 
 }
