@@ -20,4 +20,8 @@ public interface BoardDao {
 
     void deleteAll();
 
+    void deleteSelect(int board_num);
+
+    String selectBoardPass(int board_num);
+
 }

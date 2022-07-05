@@ -37,7 +37,7 @@
     </tr>
   </table>
   <br><br><input type="button" value="수정" onclick="open_win('/board/check_pass.do?num=${board.board_num}', 'update')">
-  <input type="button" value="삭제" onclick="open_win('/board/check_pass.do?num=${board.board_num}', 'delete')">
+  <input type="button" value="삭제" onclick="open_win('/board/checkPassword?num=${board.board_num}', 'delete')">
   <input type="button" value="목록" onclick="location.href='list.do'">
   <input type="button" value="등록" onclick="location.href='write.do'">
 

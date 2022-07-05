@@ -52,4 +52,16 @@ public class BoardDaoImpl implements BoardDao {
     public void deleteAll() {
         session.delete(namespace + "deleteAll");
     }
+
+    @Override
+    public void deleteSelect(int board_num) {
+        session.delete(namespace + "deleteBoard", board_num);
+    }
+
+    @Override
+    public String selectBoardPass(int board_num) {
+        return session.selectOne(namespace + "selectContentPass", board_num);
+    }
+
+
 }

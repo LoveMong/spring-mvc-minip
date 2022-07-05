@@ -15,4 +15,8 @@ public interface BoardService {
     BoardDto boardContent(int board_num) throws Exception;
 
     void boardRegister(BoardDto boardDto) throws Exception;
+
+    void boardDelete(int board_num) throws Exception;
+
+    String boardCheckPass(int board_num) throws Exception;
 }

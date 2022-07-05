@@ -4,13 +4,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>비밀번호 확인</title>
-    <link rel="stylesheet" href="../css/shopping.css">
-    <script type="text/javascript" src="../js/board.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/shopping.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/board.js"></script>
 </head>
 <body>
 <div align="center">
     <h1>비밀번호 확인</h1>
-    <form action="/board/check_pass.do" name="frm" method="post">
+    <form action="${pageContext.request.contextPath}/board/delete" name="frm" method="post">
         <input type="hidden" name="num" value="${param.num}">
         <table style="width: 80%">
             <tr>

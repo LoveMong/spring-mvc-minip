@@ -42,4 +42,14 @@ public class BoardServiceImpl implements BoardService {
         boardDao.insertBoard(boardDto);
     }
 
+    @Override
+    public void boardDelete(int board_num) throws Exception {
+        boardDao.deleteSelect(board_num);
+    }
+
+    @Override
+    public String boardCheckPass(int board_num) throws Exception {
+        return boardDao.selectBoardPass(board_num);
+    }
+
 }

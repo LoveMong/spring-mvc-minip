@@ -44,5 +44,17 @@
         FROM board
     </delete>
 
+    <delete id="deleteBoard" parameterType="int">
+        DELETE
+        FROM board
+        WHERE board_num = #{board_num}
+    </delete>
+
+    <select id="selectContentPass" parameterType="int" resultType="String">
+        SELECT board_pwd
+        FROM board
+        WHERE board_num = #{board_num}
+    </select>
+
 
 </mapper>

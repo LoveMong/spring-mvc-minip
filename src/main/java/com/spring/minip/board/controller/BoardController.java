@@ -4,6 +4,7 @@ package com.spring.minip.board.controller;
 import com.spring.minip.board.domain.BoardDto;
 import com.spring.minip.board.domain.PageHandler;
 import com.spring.minip.board.service.BoardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ import java.util.Map;
  * @Date : 2022-06-30
  * @Author : L
  */
+@Slf4j
 @Controller
 @RequestMapping("/board")
 public class BoardController {
@@ -79,4 +81,30 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    @GetMapping("/checkPassword")
+    public String checkPassword(@RequestParam("num") int board_num, Model m) {
+        m.addAttribute("num", board_num);
+        return "board/boardCheckPass";
+    }
+
+    @PostMapping("/delete")
+    public String checkPassword(@RequestParam("num") int board_num,
+                                @RequestParam("pass") String content_password, Model m) throws Exception{
+        log.info("num : " + board_num);
+        log.info("pass : " + content_password);
+
+        if (!checkPass(board_num, content_password)) {
+            m.addAttribute("message", "비밀번호를 다시 확인해주세요.");
+            return "board/boardCheckPass";
+        } else {
+            boardService.boardDelete(board_num);
+        }
+
+        return "redirect:/board/list";
+    }
+
+    private boolean checkPass(int board_num, String content_password) throws Exception {
+        String checkPass = boardService.boardCheckPass(board_num);
+        return checkPass.equals(content_password);
+    }
 }
