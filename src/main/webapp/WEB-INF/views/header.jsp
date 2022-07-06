@@ -9,11 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <script type="text/javascript" src="<c:url value='/resources/js/board.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/resources/js/product.js'/>"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<c:url value='/resources/js/board.js?ver=<%=new java.util.Date().getTime()%>'/>"></script>
+    <script type="text/javascript" src="<c:url value='/resources/js/product.js?ver=<%=new java.util.Date().getTime()%>'/>"></script>
     <title>Spring MiniProject</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
-    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/shopping.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/shopping.css?ver=<%=new java.util.Date().getTime()%>'/>">
     <link href="<c:url value='/resources/bootstrap/css/bootstrap.css'/>" rel="stylesheet">
 </head>
 
