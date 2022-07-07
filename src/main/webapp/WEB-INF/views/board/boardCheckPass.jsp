@@ -10,16 +10,16 @@
 <body>
 <div align="center">
     <h1>비밀번호 확인</h1>
-    <form action="${pageContext.request.contextPath}/board/delete" name="frm" method="post">
-        <input type="hidden" name="num" value="${param.num}">
+    <form action="" name="frm" method="post">
+        <input type="hidden" id="num" name="num" value="${param.num}">
         <table style="width: 80%">
             <tr>
                 <th>비밀번호 </th>
-                <td><input type="password" name="pass" size="20"></td>
+                <td><input type="password" id="pass" name="pass" size="20"></td>
             </tr>
         </table>
         <br>
-        <input type="submit" id="submit" value=" 확 인 " onclick="return passCheck()">
+        <input type="button" id="submit" value=" 확 인 " onclick="passCheck()">
         <br>
         <br>${message}
     </form>

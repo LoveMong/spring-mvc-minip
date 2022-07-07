@@ -41,18 +41,37 @@ function open_win(url, name) {
 // window.open(url, "_blank", option);
 
 function passCheck() {
-	
+
+	board_pwd = document.getElementById("pass").value;
+	board_num = document.getElementById("num").value;
+
 	if (document.frm.pass.value.length == 0) {
-	
+
 		alert("비밀번호를 입력하세요.");
 
-		return false;
-		
-		}
-	
-	return true;
+	} else {
+		$.ajax({
+			type: 'post', // 요청 메서드
+			url: '/board/delete', // 요청 URI
+			data: {
+				num : board_num,
+				pass : board_pwd
+			}, // 서버로 전송할 데이터
+			success: function (result) {
+				if (result === 1) {
+					alert("게시글 삭제 성공");
+					window.close();
+				} else {
+					alert("비밀번호를 확인해주세요.");
+				}
 
+			},
+		})
+	}
 }
+
+
+
 
 
 
