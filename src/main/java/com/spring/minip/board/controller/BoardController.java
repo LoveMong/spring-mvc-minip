@@ -78,6 +78,13 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+
+    /**
+     * 게시판 수정 시 게시물 비밀번호 확인 페이지로 이동 메소드
+     * @param board_num 삭제 요청된 게시물 번호 매개변수
+     * @param m 해당 게시물 번호를 담은 객체
+     * @return 게시물 번호 확인 페이지(boardCheckPass.jsp)로 이동
+     */
     @GetMapping("/checkPassword")
     public String checkPassword(@RequestParam("num") int board_num, Model m) {
         m.addAttribute("num", board_num);
@@ -85,6 +92,7 @@ public class BoardController {
     }
 
     @PostMapping("/delete")
+    @ResponseBody
     public String checkPassword(@RequestParam("num") int board_num,
                                 @RequestParam("pass") String content_password, Model m) throws Exception{
         log.info("num : " + board_num);
