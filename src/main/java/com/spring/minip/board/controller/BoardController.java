@@ -57,6 +57,13 @@ public class BoardController {
 
     }
 
+    /**
+     * 선택된 게시글 상세 페이지 메소드
+     * @param board_num 선택된 게시글 번호 매개변수
+     * @param m 게시글 번호에 해당되는 상세 내역을 담는 객체
+     * @return 게시글 상세 페이지(boardContent.jsp)로 이동
+     * @throws Exception
+     */
     @GetMapping("/content")
     public String boardContent(int board_num, Model m) throws Exception {
 
