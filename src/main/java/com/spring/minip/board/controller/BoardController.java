@@ -74,6 +74,10 @@ public class BoardController {
         return "board/boardContent";
     }
 
+    /**
+     * 게시글 등록 페이지로 이동 메소드
+     * @return 게시글 페이지(boardRegister.jsp)로 이동
+     */
     @GetMapping("/register")
     public String boardRegister() {
         return "board/boardRegister";
