@@ -83,6 +83,12 @@ public class BoardController {
         return "board/boardRegister";
     }
 
+    /**
+     * 게시글 등록
+     * @param boardDto 게시글 상세 정보(board_num, board_title, board_content...를 담은 객체
+     * @return 게시글 리스트(board/list)로 redirect
+     * @throws Exception
+     */
     @PostMapping("/register")
     public String boardRegister(BoardDto boardDto) throws Exception {
         boardService.boardRegister(boardDto);
