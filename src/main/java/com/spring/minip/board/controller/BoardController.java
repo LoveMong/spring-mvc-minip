@@ -125,6 +125,13 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    /**
+     *
+     * @param board_num
+     * @param content_password
+     * @return
+     * @throws Exception
+     */
     private boolean checkPass(int board_num, String content_password) throws Exception {
         String checkPass = boardService.boardCheckPass(board_num);
         return checkPass.equals(content_password);
