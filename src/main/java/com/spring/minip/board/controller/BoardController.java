@@ -127,7 +127,7 @@ public class BoardController {
 
     /**
      * 게시판 수정, 삭제 시 비밀번호 확인 메소드
-     * @param board_num
+     * @param board_num 해당 게시판 번호
      * @param content_password
      * @return
      * @throws Exception
