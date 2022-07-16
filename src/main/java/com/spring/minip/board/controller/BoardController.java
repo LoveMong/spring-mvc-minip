@@ -108,6 +108,14 @@ public class BoardController {
         return "board/boardCheckPass";
     }
 
+    /**
+     *
+     * @param board_num
+     * @param content_password
+     * @param m
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/delete")
     @ResponseBody
     public String checkPassword(@RequestParam("num") int board_num,
