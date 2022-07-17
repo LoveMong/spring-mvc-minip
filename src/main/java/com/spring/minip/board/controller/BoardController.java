@@ -110,7 +110,7 @@ public class BoardController {
 
     /**
      *
-     * @param board_num
+     * @param board_num 게시판 번호
      * @param content_password
      * @param m
      * @return
