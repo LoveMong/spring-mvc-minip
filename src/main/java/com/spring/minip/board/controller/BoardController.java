@@ -59,8 +59,9 @@ public class BoardController {
 
     /**
      * 선택된 게시글 상세 페이지 메소드
+     *
      * @param board_num 선택된 게시글 번호 매개변수
-     * @param m 게시글 번호에 해당되는 상세 내역을 담는 객체
+     * @param m         게시글 번호에 해당되는 상세 내역을 담는 객체
      * @return 게시글 상세 페이지(boardContent.jsp)로 이동
      * @throws Exception
      */
@@ -76,6 +77,7 @@ public class BoardController {
 
     /**
      * 게시글 등록 페이지로 이동 메소드
+     *
      * @return 게시글 페이지(boardRegister.jsp)로 이동
      */
     @GetMapping("/register")
@@ -85,6 +87,7 @@ public class BoardController {
 
     /**
      * 게시글 등록
+     *
      * @param boardDto 게시글 상세 정보(board_num, board_title, board_content...를 담은 객체
      * @return 게시글 리스트(board/list)로 redirect
      * @throws Exception
@@ -98,8 +101,9 @@ public class BoardController {
 
     /**
      * 게시판 수정 시 게시물 비밀번호 확인 페이지로 이동 메소드
+     *
      * @param board_num 삭제 요청된 게시물 번호 매개변수
-     * @param m 해당 게시물 번호를 담은 객체
+     * @param m         해당 게시물 번호를 담은 객체
      * @return 게시물 번호 확인 페이지(boardCheckPass.jsp)로 이동
      */
     @GetMapping("/checkPassword")
@@ -109,7 +113,7 @@ public class BoardController {
     }
 
     /**
-     *
+     * 게시글 삭제
      * @param board_num 게시판 번호
      * @param content_password
      * @param m
@@ -119,7 +123,7 @@ public class BoardController {
     @PostMapping("/delete")
     @ResponseBody
     public String checkPassword(@RequestParam("num") int board_num,
-                                @RequestParam("pass") String content_password, Model m) throws Exception{
+                                @RequestParam("pass") String content_password, Model m) throws Exception {
         log.info("num : " + board_num);
         log.info("pass : " + content_password);
 
@@ -134,7 +138,8 @@ public class BoardController {
     }
 
     /**
-     * 게시판 수정, 삭제 시 비밀번호 확인 메소드
+     * 게시판 게시글 수정, 삭제 시 비밀번호 확인 메소드
+     *
      * @param board_num 해당 게시판 번호
      * @param content_password 게시글 비밀번호
      * @return 비밀번호 확인, 일치 시 true 아니면 false 반환
@@ -144,4 +149,5 @@ public class BoardController {
         String checkPass = boardService.boardCheckPass(board_num);
         return checkPass.equals(content_password);
     }
+
 }

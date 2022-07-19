@@ -76,8 +76,6 @@ n
 >src/main/java/com/spring/minip/board/service/BoardService.java,c/f/cf81f32357238417a07a450be4d38b5f2512a43a
 a
 1src/main/webapp/WEB-INF/views/member/editForm.jsp,9/8/988f4965fc3300fe47e26fc6f7d610c326beea0a
-r
-Bsrc/main/java/com/spring/minip/board/service/BoardServiceImpl.java,0/1/01240912e7742bc098c6133457b9dc17c8215f21
 f
 6src/main/java/com/spring/minip/board/dao/BoardDao.java,4/3/43c28b7e82bc1a8e1bae1c98736444a49171d23c
 `
