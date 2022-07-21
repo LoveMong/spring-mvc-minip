@@ -117,7 +117,7 @@ public class BoardController {
      * @param board_num 게시판 번호
      * @param content_password 게시판 비밀번호
      * @param m
-     * @return
+     * @return 게시판으로 redirect
      * @throws Exception
      */
     @PostMapping("/delete")
