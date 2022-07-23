@@ -116,7 +116,7 @@ public class BoardController {
      * 게시글 삭제
      * @param board_num 게시판 번호
      * @param content_password 게시판 비밀번호
-     * @param m
+     * @param m 메시지를 담은 객체
      * @return 게시판으로 redirect
      * @throws Exception
      */
