@@ -80,3 +80,5 @@ f
 6src/main/java/com/spring/minip/board/dao/BoardDao.java,4/3/43c28b7e82bc1a8e1bae1c98736444a49171d23c
 `
 0src/main/webapp/WEB-INF/views/member/checkID.jsp,0/d/0d2f3e70baf1768a529f471905524fbc1762574b
+d
+4src/main/webapp/WEB-INF/views/board/boardContent.jsp,4/8/48bd3b46b84d535244b5c9b4d0eb9746564b207e

@@ -113,7 +113,7 @@ public class BoardController {
     }
 
     /**
-     * 게시글 삭제
+     * 게시글 삭제 메소드
      * @param board_num 게시판 번호
      * @param content_password 게시판 비밀번호
      * @param m 메시지를 담은 객체
