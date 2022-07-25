@@ -60,7 +60,9 @@ function passCheck() {
 			success: function (result) {
 				if (result === 1) {
 					alert("게시글 삭제 성공");
+					opener.location.href='/board/list';
 					window.close();
+
 				} else {
 					alert("비밀번호를 확인해주세요.");
 				}

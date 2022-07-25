@@ -113,28 +113,28 @@ public class BoardController {
     }
 
     /**
-     * 게시글 삭제 메소드
-     * @param board_num 게시판 번호
-     * @param content_password 게시판 비밀번호
-     * @param m 메시지를 담은 객체
-     * @return 게시판으로 redirect
+     * (ajax) 게시글 삭제 처리 메소드
+     * @param board_num 해당 게시글 번호
+     * @param content_password 해당 게시글 비밀번호
+     * @return ajaxResult 삭제 성공 시 1 반환
      * @throws Exception
      */
     @PostMapping("/delete")
     @ResponseBody
-    public String checkPassword(@RequestParam("num") int board_num,
-                                @RequestParam("pass") String content_password, Model m) throws Exception {
+    public int checkPassword(@RequestParam("num") int board_num,
+                                @RequestParam("pass") String content_password) throws Exception {
         log.info("num : " + board_num);
         log.info("pass : " + content_password);
 
+        int ajaxResult;
+
         if (!checkPass(board_num, content_password)) {
-            m.addAttribute("message", "비밀번호를 다시 확인해주세요.");
-            return "board/boardCheckPass";
+            ajaxResult = 0;
         } else {
             boardService.boardDelete(board_num);
+            ajaxResult = 1;
         }
-
-        return "redirect:/board/list";
+        return ajaxResult;
     }
 
     /**
