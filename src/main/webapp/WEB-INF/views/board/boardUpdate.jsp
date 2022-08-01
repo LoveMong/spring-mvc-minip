@@ -12,11 +12,11 @@
 <div id="wrap" align="center">
     <h2 style="margin-bottom: 50px">게시글 등록</h2>
     <form action="/board/update.do" method="post" name="frm">
-        <input type="hidden" name="num" value="${board.num }">
+        <input type="hidden" name="num" value="${board.board_num }">
         <table>
             <tr>
                 <th>작 성 자</th>
-                <td><input type="text" name="name" value="${board.name}">* 필수</td>
+                <td><input type="text" name="name" value="${board.board_writer}">* 필수</td>
             </tr>
             <tr>
                 <th>비 밀 번 호</th>
@@ -24,11 +24,11 @@
             </tr>
             <tr>
                 <th>이 메 일</th>
-                <td><input type="email" name="email" value="${board.email}"></td>
+                <td><input type="email" name="email" value="${board.board_email}"></td>
             </tr>
             <tr>
                 <th>제 목</th>
-                <td><input type="text" size="70" name="title" value="${board.title}">* 필수</td>
+                <td><input type="text" size="70" name="title" value="${board.board_title}">* 필수</td>
             </tr>
             <tr>
                 <th>내 용</th>

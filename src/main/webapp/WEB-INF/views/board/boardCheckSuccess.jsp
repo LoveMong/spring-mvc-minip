@@ -12,13 +12,13 @@
 
     if(window.name == 'update') {
 
-        window.opener.parent.location.href = "/board/update.do?num=${param.num}";
+        window.opener.parent.location.href = "/board/update?num=${param.num}";
 
     } else if(window.name == 'delete') {
 
         alert("삭제되었습니다.");
 
-        window.opener.parent.location.href = "/board/delete.do?num=${param.num}";
+        window.opener.parent.location.href = "/board/list";
 
     }
 

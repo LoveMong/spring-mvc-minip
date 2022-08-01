@@ -59,9 +59,9 @@ function passCheck() {
 			}, // 서버로 전송할 데이터
 			success: function (result) {
 				if (result === 1) {
-					alert("게시글 삭제 성공");
-					opener.location.href='/board/list';
-					window.close();
+					// alert("게시글 삭제 성공");
+					opener.location.href='/board/checkPassSuccess?num='+board_num;
+					// window.close();
 
 				} else {
 					alert("비밀번호를 확인해주세요.");

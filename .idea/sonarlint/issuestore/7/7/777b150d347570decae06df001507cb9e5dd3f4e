@@ -1,9 +1,0 @@
-
-u	java:S116"TRename this field "board_num" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÚÙÌùÿÿÿÿ8™÷Ìúš0
-w	java:S116"VRename this field "board_title" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùõËıÿÿÿÿ8ãÁĞüš0
-x	java:S116"WRename this field "board_writer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®í×Êúÿÿÿÿ8ø¼Ñüš0
-y	java:S116"XRename this field "board_content" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üø¸™ÿÿÿÿÿ8±´ô¨›0
-u	java:S116"TRename this field "board_pwd" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒãïÅşÿÿÿÿ8êë‡ø›0
-w	java:S116"VRename this field "board_email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒˆØ“şÿÿÿÿ8ñ„õ÷›0
-t	java:S116"XRename this field "register_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬…ÂÒ8­œÒüš0
-v	java:S116!"URename this field "board_hits" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùú‡ãüÿÿÿÿ8ÑÒüš0

@@ -112,6 +112,11 @@ public class BoardController {
         return "board/boardCheckPass";
     }
 
+    @GetMapping("/checkPassSuccess")
+    public String checkPassSuccess(@RequestParam("num") int board_num, Model m) {
+        m.addAttribute("num", board_num);
+        return "board/boardCheckSuccess";
+    }
     /**
      * (ajax) 게시글 삭제 처리 메소드
      * @param board_num 해당 게시글 번호
@@ -135,6 +140,13 @@ public class BoardController {
             ajaxResult = 1;
         }
         return ajaxResult;
+    }
+
+    @GetMapping("update")
+    public String boardUpdate(@RequestParam("num") int board_num, Model model) throws Exception {
+        BoardDto boardDto = boardService.boardContent(board_num);
+        model.addAttribute("board", boardDto);
+        return "board/boardUpdate";
     }
 
     /**
