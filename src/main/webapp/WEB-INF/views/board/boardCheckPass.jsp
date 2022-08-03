@@ -11,7 +11,7 @@
 <body>
 <div align="center">
     <h1>비밀번호 확인</h1>
-    <form action="" name="frm" method="post">
+    <form action="<c:url value='/board/checkPassword'/>" id="boardCheckForm" name="frm" method="post" onsubmit="return passCheck()">
         <input type="hidden" id="num" name="num" value="${param.num}">
         <table style="width: 80%">
             <tr>
@@ -20,7 +20,7 @@
             </tr>
         </table>
         <br>
-        <input type="button" id="submit" value=" 확 인 " onclick="passCheck()">
+        <input type="submit" id="submit" value=" 확 인 ">
         <br>
         <br>${message}
     </form>

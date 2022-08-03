@@ -18,6 +18,8 @@
 
         alert("삭제되었습니다.");
 
+        window.opener.parent.location.href = "/board/delete?num=${param.num}";
+
         window.opener.parent.location.href = "/board/list";
 
     }

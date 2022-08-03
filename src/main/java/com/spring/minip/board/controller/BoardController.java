@@ -114,36 +114,41 @@ public class BoardController {
 
     @GetMapping("/checkPassSuccess")
     public String checkPassSuccess(@RequestParam("num") int board_num, Model m) {
+        log.info("board_num : " + board_num);
         m.addAttribute("num", board_num);
         return "board/boardCheckSuccess";
     }
+
     /**
-     * (ajax) 게시글 삭제 처리 메소드
+     * 게시글 삭제 처리 메소드
      * @param board_num 해당 게시글 번호
      * @param content_password 해당 게시글 비밀번호
      * @return ajaxResult 삭제 성공 시 1 반환
      * @throws Exception
      */
-    @PostMapping("/delete")
-    @ResponseBody
-    public int checkPassword(@RequestParam("num") int board_num,
-                                @RequestParam("pass") String content_password) throws Exception {
+    @PostMapping("/checkPassword")
+    public String checkPassword(@RequestParam("num") int board_num,
+                             @RequestParam("pass") String content_password, Model m) throws Exception {
         log.info("num : " + board_num);
         log.info("pass : " + content_password);
 
-        int ajaxResult;
-
         if (!checkPass(board_num, content_password)) {
-            ajaxResult = 0;
+            m.addAttribute("message", "비밀번호를 확인해주세요.");
+            return "board/boardCheckPass";
         } else {
-            boardService.boardDelete(board_num);
-            ajaxResult = 1;
+            return "board/boardCheckSuccess";
         }
-        return ajaxResult;
+
+    }
+
+    @GetMapping("delete")
+    public void boardDelete(@RequestParam("num") int board_num) throws Exception {
+        boardService.boardDelete(board_num);
     }
 
     @GetMapping("update")
     public String boardUpdate(@RequestParam("num") int board_num, Model model) throws Exception {
+
         BoardDto boardDto = boardService.boardContent(board_num);
         model.addAttribute("board", boardDto);
         return "board/boardUpdate";

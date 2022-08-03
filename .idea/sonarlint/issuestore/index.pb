@@ -54,10 +54,6 @@ a
 0src/main/webapp/WEB-INF/views/member/checkID.jsp,0/d/0d2f3e70baf1768a529f471905524fbc1762574b
 b
 2src/main/webapp/WEB-INF/views/member/loginForm.jsp,0/9/09f2266150621b4eefcff30d8d5f3364872bb614
-W
-'src/main/webapp/resources/js/product.js,d/9/d9e87b379764bb96eba63d7d9807aa1fc772d74a
-^
-.src/main/webapp/resources/js/login_register.js,a/2/a28ba729948bd5fb8603806c2a2af57d34bd1fe9
 u
 Esrc/main/java/com/spring/minip/member/controller/LoginController.java,e/e/eead9a35ee4329f810169e8c2475d2f34745b264
 t
@@ -70,3 +66,13 @@ X
 (src/main/webapp/WEB-INF/views/header.jsp,c/b/cb531d3ceedf877860b36a3c7f7856bda7d93ea2
 X
 (src/main/webapp/WEB-INF/views/footer.jsp,9/a/9a549875954782aadfd152200a74f49acf667acb
+i
+9src/main/java/com/spring/minip/board/domain/BoardDto.java,7/7/777b150d347570decae06df001507cb9e5dd3f4e
+r
+Bsrc/main/java/com/spring/minip/board/service/BoardServiceImpl.java,0/1/01240912e7742bc098c6133457b9dc17c8215f21
+p
+@src/main/java/com/spring/minip/member/service/MemberService.java,1/d/1d3c6ea064e56d154d44846f43787524114bc98b
+h
+8src/main/java/com/spring/minip/member/dao/MemberDao.java,3/f/3f80142593004a1ccecfd180165fc8d9ff138007
+t
+Dsrc/main/java/com/spring/minip/member/service/MemberServiceImpl.java,d/2/d2f178e9189cc7598691f5bcb843967147f31f40

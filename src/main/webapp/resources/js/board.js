@@ -42,34 +42,16 @@ function open_win(url, name) {
 
 function passCheck() {
 
-	board_pwd = document.getElementById("pass").value;
-	board_num = document.getElementById("num").value;
 
 	if (document.frm.pass.value.length == 0) {
 
 		alert("비밀번호를 입력하세요.");
 
-	} else {
-		$.ajax({
-			type: 'post', // 요청 메서드
-			url: '/board/delete', // 요청 URI
-			data: {
-				num : board_num,
-				pass : board_pwd
-			}, // 서버로 전송할 데이터
-			success: function (result) {
-				if (result === 1) {
-					// alert("게시글 삭제 성공");
-					opener.location.href='/board/checkPassSuccess?num='+board_num;
-					// window.close();
+		return false
 
-				} else {
-					alert("비밀번호를 확인해주세요.");
-				}
-
-			},
-		})
 	}
+
+
 }
 
 
