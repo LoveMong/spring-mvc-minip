@@ -38,16 +38,12 @@ V
 &src/main/webapp/WEB-INF/views/main.jsp,f/0/f0ebffd056149bea284e829c2a69d5275a18074f
 k
 ;src/main/java/com/spring/minip/member/domain/MemberDto.java,3/4/3446b5342507a0ed487d9030d01999255f2a477b
-l
-<src/main/java/com/spring/minip/board/domain/PageHandler.java,2/8/28168bc19f9a31e47c3088d7d1b5472ee5e54300
 p
 @src/test/java/com/spring/minip/member/dao/MemberDaoImplTest.java,d/d/ddf2f1aa56113850e462dedc2225c32f3a47d9ce
 O
 src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
 n
 >src/test/java/com/spring/minip/board/dao/BoardDaoImplTest.java,0/9/097ccb7341a8de276e5d5888dc1dc42a576c981d
-j
-:src/main/java/com/spring/minip/board/dao/BoardDaoImpl.java,f/5/f583286077bbe6d1f53b53be79d7dced8cd98309
 a
 1src/main/webapp/WEB-INF/views/member/editForm.jsp,9/8/988f4965fc3300fe47e26fc6f7d610c326beea0a
 `
@@ -66,10 +62,6 @@ X
 (src/main/webapp/WEB-INF/views/header.jsp,c/b/cb531d3ceedf877860b36a3c7f7856bda7d93ea2
 X
 (src/main/webapp/WEB-INF/views/footer.jsp,9/a/9a549875954782aadfd152200a74f49acf667acb
-i
-9src/main/java/com/spring/minip/board/domain/BoardDto.java,7/7/777b150d347570decae06df001507cb9e5dd3f4e
-r
-Bsrc/main/java/com/spring/minip/board/service/BoardServiceImpl.java,0/1/01240912e7742bc098c6133457b9dc17c8215f21
 p
 @src/main/java/com/spring/minip/member/service/MemberService.java,1/d/1d3c6ea064e56d154d44846f43787524114bc98b
 h

@@ -128,7 +128,8 @@ public class BoardController {
      */
     @PostMapping("/checkPassword")
     public String checkPassword(@RequestParam("num") int board_num,
-                             @RequestParam("pass") String content_password, Model m) throws Exception {
+                                @RequestParam("pass") String content_password, Model m) throws Exception {
+
         log.info("num : " + board_num);
         log.info("pass : " + content_password);
 
@@ -141,12 +142,12 @@ public class BoardController {
 
     }
 
-    @GetMapping("delete")
+    @GetMapping("/delete")
     public void boardDelete(@RequestParam("num") int board_num) throws Exception {
         boardService.boardDelete(board_num);
     }
 
-    @GetMapping("update")
+    @GetMapping("/update")
     public String boardUpdate(@RequestParam("num") int board_num, Model model) throws Exception {
 
         BoardDto boardDto = boardService.boardContent(board_num);
