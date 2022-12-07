@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<style>
-    table th {
-        text-align: center;
-    }
-</style>
+<head>
+    <style>
+        table th {
+            text-align: center;
+        }
+    </style>
+    <title></title>
+</head>
+
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 
@@ -34,7 +38,7 @@
                 <td><textarea cols="70" rows="15" name="board_content"></textarea></td>
             </tr>
         </table>
-        <br><input type="submit" value="등록" onclick="return boardCheck()">
+        <br><input type="button" value="등록" onclick="boardCheck()">
         <input type="reset" value="다시작성">
         <input type="button" value="목록" onclick="location.href='list.do'">
     </form>
