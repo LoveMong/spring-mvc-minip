@@ -28,7 +28,7 @@
 
 
     <tx:annotation-driven/>
-    <context:component-scan base-package="com.spring.minip"/>
+    <!-- <context:component-scan base-package="com.spring.minip"/> -->
 
 
 </beans>

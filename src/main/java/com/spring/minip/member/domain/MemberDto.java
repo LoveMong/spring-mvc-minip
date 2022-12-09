@@ -6,12 +6,13 @@ import java.util.Date;
 
 
 @Builder
-@ToString
-@Getter
-@Setter
-@NoArgsConstructor // 파라미터가 없는 기본 생성자 생성
-@AllArgsConstructor // 필드 값을 파라미터로 받는 생성자 생성
+//@ToString
+//@Getter
+//@Setter
+//@NoArgsConstructor // 파라미터가 없는 기본 생성자 생성
+//@AllArgsConstructor // 필드 값을 파라미터로 받는 생성자 생성
 //@RequiredArgsConstructor // final 또는 @NonNull인 필드 값만 파라미터로 받는 생성자 생성
+@Data
 public class MemberDto {
 
 
@@ -28,10 +29,6 @@ public class MemberDto {
 
 
 }
-
-
-
-//@Builder
 
 
 

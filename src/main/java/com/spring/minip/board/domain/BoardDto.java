@@ -31,5 +31,7 @@ public class BoardDto {
     private Date register_date;
 
     private int board_hits;
+    
+    
 
 }

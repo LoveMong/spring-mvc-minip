@@ -1,20 +1,23 @@
 package com.spring.minip.member.controller;
 
-import com.spring.minip.member.domain.MemberDto;
-import com.spring.minip.member.service.MemberService;
-import lombok.extern.slf4j.Slf4j;
+import java.net.URLEncoder;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
+
+import com.spring.minip.member.domain.MemberDto;
+import com.spring.minip.member.service.MemberService;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  *  로그인 기능 컨트롤을 위한 클래스 *
@@ -74,7 +77,7 @@ public class LoginController {
 //      1. 아이디와 패스워드 확인 (loginCheck)
         if (!loginCheck(memberId, memberPwd)) {
 //          1-1. 아이디와 패스워드가 일치하지 않으면 그 내용을 message에 담에 login 페이지로 redirect
-            String message = URLEncoder.encode("아이디 또는 패스워드가 일치하지 않습니다.", StandardCharsets.UTF_8);
+            String message = URLEncoder.encode("아이디 또는 패스워드가 일치하지 않습니다.");
             return "redirect:/login/login?message=" + message;
         }
 //      2. 아이디와 패스워드가 일치하면
