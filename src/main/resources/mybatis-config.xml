@@ -6,5 +6,6 @@
     <typeAliases>
         <typeAlias alias="MemberDto" type="com.spring.minip.member.domain.MemberDto"/>
         <typeAlias alias="BoardDto" type="com.spring.minip.board.domain.BoardDto"/>
+        <typeAlias alias="ProductDto" type="com.spring.minip.product.domain.ProductDto"/>
     </typeAliases>
 </configuration>
