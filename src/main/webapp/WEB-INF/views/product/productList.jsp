@@ -13,7 +13,7 @@ table td {
 	<div id="wrap" align="center">
 		<h2>상품 리스트 - 관리자 페이지</h2>
 		<div colspan="5" style="border: white; text-align: right; margin-bottom: 10px; margin-right: 5px; margin-top: 50px">
-				<a href="/product/register.do">상품 등록</a>			
+				<a href="/product/register">상품 등록</a>			
 		</div>
 		<table class="list">
 			<tr style="text-align: center; font-size: 12px ">

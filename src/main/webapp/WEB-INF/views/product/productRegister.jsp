@@ -3,11 +3,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <body>
-	<jsp:include page="/view/common/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/header.jsp"/>
 
 	<div id="wrap" align="center">
 		<h2>상품 등록 - 관리자 페이지</h2>
-		<form action="/product/register.do" method="post" enctype="multipart/form-data" name="frm">
+		<form action="/product/register" method="post" enctype="multipart/form-data" name="frm">
 			<table>
 				<tr>
 					<th>상 품 명</th>
@@ -29,10 +29,10 @@
 			</table>
 			<br><input type="submit" value="등록" onclick="return productCheck()">
 				<input type="reset" value="다시작성">
-				<input type="button" value="목록" onclick="location.href='list.do'">
+				<input type="button" value="목록" onclick="location.href='/product/list'">
 		</form>
 	</div>
 	
-	<jsp:include page="/view/common/footer.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

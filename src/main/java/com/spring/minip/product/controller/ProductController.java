@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.spring.minip.board.domain.PageHandler;
 import com.spring.minip.product.domain.ProductDto;
@@ -52,6 +54,23 @@ public class ProductController {
     	
         return "/product/productList";
 
+    }
+    
+    
+    @GetMapping("/register")
+    public String registerProduct() {
+    	return "/product/productRegister";
+    }
+    
+    
+    @PostMapping("/register")
+    public String registerProduct(ProductDto productDto, MultipartFile multipartFile) {
+    	
+    	log.info("productDto : " + productDto);
+    	
+    	
+    	
+    	return "redirect:/product/list";
     }
 
 
