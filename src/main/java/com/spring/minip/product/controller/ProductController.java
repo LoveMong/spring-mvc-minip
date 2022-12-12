@@ -64,9 +64,13 @@ public class ProductController {
     
     
     @PostMapping("/register")
-    public String registerProduct(ProductDto productDto, MultipartFile multipartFile) {
+    public String registerProduct(ProductDto productDto, @RequestParam(required = false, value = "pictureUrl") MultipartFile file) {
     	
     	log.info("productDto : " + productDto);
+    	log.info("file : " + file);
+    	
+    	
+    	
     	
     	
     	
