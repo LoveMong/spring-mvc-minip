@@ -21,5 +21,10 @@
         ORDER BY code DESC
         LIMIT #{offset}, #{pageSize}
     </select>
+    
+    <insert id="registerProduct" parameterType="ProductDto">
+    	INSERT INTO product(name, price, description, pictureurl, thumbUrl)
+    	VALUES(#{name}, #{price}, #{description}, #{pictureUrl}, #{thumbUrl})
+    </insert>
 
 </mapper>

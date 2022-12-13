@@ -13,5 +13,6 @@ public interface ProductDao {
 	
 	List<ProductDto> searchProductList(Map<String, Integer> map);
 	
+	int registerProduct(ProductDto productDto);
 	
 }

@@ -35,6 +35,13 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 
+	@Override
+	public int registerProduct(ProductDto productDto) {
+		return session.insert(namespace + "registerProduct", productDto);
+	}
+
+
+	
 
 
 }

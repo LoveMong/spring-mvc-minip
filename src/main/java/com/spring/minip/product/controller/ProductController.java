@@ -1,8 +1,11 @@
 package com.spring.minip.product.controller;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.spring.mimip.util.UploadFileUtils;
 import com.spring.minip.board.domain.PageHandler;
 import com.spring.minip.product.domain.ProductDto;
 import com.spring.minip.product.service.ProductService;
@@ -32,6 +36,9 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	
+	@Resource(name = "uploadPath")
+	private String uploadPath;
 	
     @GetMapping("/list")
     public String productList(@RequestParam(value = "page", defaultValue = "1") int page,
@@ -64,14 +71,25 @@ public class ProductController {
     
     
     @PostMapping("/register")
-    public String registerProduct(ProductDto productDto, @RequestParam(required = false, value = "pictureUrl") MultipartFile file) {
+    public String registerProduct(ProductDto productDto, MultipartFile file) throws Exception {
     	
     	log.info("productDto : " + productDto);
     	log.info("file : " + file);
     	
-    	
-    	
-    	
+        String imgUploadPath = uploadPath + File.separator + "imgUpload";
+        String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+        String fileName = null;
+        
+        if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+           fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+        } else {
+           fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+        }
+        
+        productDto.setPictureUrl(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+        productDto.setThumbUrl(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+        
+        productService.registerProduct(productDto);
     	
     	
     	return "redirect:/product/list";

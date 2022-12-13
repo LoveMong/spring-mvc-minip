@@ -29,7 +29,11 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductDto> productList(Map<String, Integer> map) {
 		return productDao.searchProductList(map);
 	}
-	
+
+	@Override
+	public int registerProduct(ProductDto productDto) {
+		return productDao.registerProduct(productDto);
+	}
 	
 
 

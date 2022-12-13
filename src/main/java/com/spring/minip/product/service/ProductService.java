@@ -13,4 +13,6 @@ public interface ProductService {
     
     List<ProductDto> productList(Map<String, Integer> map);
     
+    int registerProduct(ProductDto productDto);
+    
 }
