@@ -26,5 +26,10 @@
     	INSERT INTO product(name, price, description, pictureurl, thumbUrl)
     	VALUES(#{name}, #{price}, #{description}, #{pictureUrl}, #{thumbUrl})
     </insert>
+    
+    <delete id="deleteProduct" parameterType="int">
+    	DELETE FROM product
+    	WHERE code = #{num}
+    </delete>
 
 </mapper>

@@ -94,6 +94,22 @@ public class ProductController {
     	
     	return "redirect:/product/list";
     }
+    
+    
+    @GetMapping("/delete")
+    public String deleteProduct(@RequestParam("num") int num) {
+    	
+    	
+    	try {
+    		productService.deleteProduct(num);
+    	} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	
+    	
+    	return "redirect:/product/list";
+    }
 
 
 }

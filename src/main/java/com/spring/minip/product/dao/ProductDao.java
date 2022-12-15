@@ -15,4 +15,6 @@ public interface ProductDao {
 	
 	int registerProduct(ProductDto productDto);
 	
+	void deleteProduct(int num);
+	
 }

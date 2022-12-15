@@ -34,8 +34,13 @@ public class ProductServiceImpl implements ProductService {
 	public int registerProduct(ProductDto productDto) {
 		return productDao.registerProduct(productDto);
 	}
-	
 
+	@Override
+	public void deleteProduct(int num) throws Exception {
+		productDao.deleteProduct(num);
+	}
+	
+	
 
     
 

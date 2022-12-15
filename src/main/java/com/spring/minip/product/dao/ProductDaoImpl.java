@@ -41,6 +41,14 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 
+	@Override
+	public void deleteProduct(int num) {
+		session.delete(namespace + "deleteProduct", num);
+	}
+	
+	
+
+
 	
 
 

@@ -15,4 +15,6 @@ public interface ProductService {
     
     int registerProduct(ProductDto productDto);
     
+    void deleteProduct(int num) throws Exception;
+    
 }
