@@ -55,6 +55,15 @@
         FROM board
         WHERE board_num = #{board_num}
     </select>
+    
+    <update id="boardUpdate" parameterType="boardDto">
+    	UPDATE board
+    	SET board_title = #{board_title},
+    	 	board_content = #{board_content},
+    	    board_writer = #{board_writer},
+    	    board_pwd = #{board_pwd}
+    	WHERE board_num = #{board_num}
+    </update>
 
 
 </mapper>

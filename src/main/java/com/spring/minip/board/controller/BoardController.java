@@ -159,6 +159,14 @@ public class BoardController {
         model.addAttribute("board", boardDto);
         return "board/boardUpdate";
     }
+    
+    @PostMapping("/update")
+    public String boardUpdate(BoardDto boardDto) throws Exception {
+    	
+    	boardService.boardUpdate(boardDto);
+    	
+    	return "redirect:/board/list";
+    }
 
     /**
      * 게시판 게시글 수정, 삭제 시 비밀번호 확인 메소드

@@ -51,5 +51,14 @@ public class BoardServiceImpl implements BoardService {
     public String boardCheckPass(int board_num) throws Exception {
         return boardDao.selectBoardPass(board_num);
     }
+    
+    @Override
+    public void boardUpdate(BoardDto boardDto) throws Exception {
+        boardDao.boardUpdate(boardDto);
+    }
+    
+    
+    
+    
 
 }

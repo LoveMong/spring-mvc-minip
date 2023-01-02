@@ -62,6 +62,11 @@ public class BoardDaoImpl implements BoardDao {
     public String selectBoardPass(int board_num) {
         return session.selectOne(namespace + "selectContentPass", board_num);
     }
+    
+    @Override
+    public void boardUpdate(BoardDto boardDto) {
+        session.update(namespace + "boardUpdate", boardDto);
+    }
 
 
 }

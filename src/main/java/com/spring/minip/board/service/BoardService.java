@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface BoardService {
+	
     List<BoardDto> boardList() throws Exception;
 
     List<BoardDto> boardList(Map map) throws Exception;
@@ -19,4 +20,7 @@ public interface BoardService {
     void boardDelete(int board_num) throws Exception;
 
     String boardCheckPass(int board_num) throws Exception;
+    
+    void boardUpdate(BoardDto boardDto) throws Exception;
+    
 }

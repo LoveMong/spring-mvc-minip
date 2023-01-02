@@ -23,5 +23,7 @@ public interface BoardDao {
     void deleteSelect(int board_num);
 
     String selectBoardPass(int board_num);
-
+    
+    void boardUpdate(BoardDto boardDto);
+    
 }
