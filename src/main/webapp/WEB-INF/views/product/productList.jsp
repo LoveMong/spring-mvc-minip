@@ -7,6 +7,7 @@ table td {
  text-align: center;
 }
 </style>
+
 <body>
 	<jsp:include page="/WEB-INF/views/header.jsp"/>
 
@@ -28,7 +29,7 @@ table td {
 					<td>${product.code}</td>				
 					<td>${product.name}</td>				
 					<td><fmt:formatNumber value="${product.price}" pattern="#,###"/>
-					<td><a href="/product/update.do?code=${product.code}">상품 수정</a></td>				
+					<td><a href="/product/update?num=${product.code}">상품 수정</a></td>				
 					<td><a href="/product/delete?num=${product.code}"
 					       onclick="return confirm('정말로 삭제하시겠습니까?');">상품 삭제</a></td>				
 				</tr>			
@@ -62,6 +63,16 @@ table td {
 </nav>
 	
 	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	
+	<script>
+	
+		msg  = "${msg}";
+		
+		if (msg == "NO_SEARCH_ERR") {
+			alert("상품을 찾을 수 없습니다.");
+		}
+		
+	</script>
 	
 </body>
 </html>

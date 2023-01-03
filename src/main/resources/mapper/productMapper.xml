@@ -31,5 +31,11 @@
     	DELETE FROM product
     	WHERE code = #{num}
     </delete>
+    
+    <select id="searchProduct" parameterType="int" resultType="ProductDto">
+    	SELECT *
+    	FROM product
+    	WHERE code = #{num} 
+    </select>
 
 </mapper>

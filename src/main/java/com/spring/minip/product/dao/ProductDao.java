@@ -17,4 +17,6 @@ public interface ProductDao {
 	
 	void deleteProduct(int num);
 	
+	ProductDto searchProduct(int num);
+	
 }

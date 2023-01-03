@@ -45,6 +45,13 @@ public class ProductDaoImpl implements ProductDao {
 	public void deleteProduct(int num) {
 		session.delete(namespace + "deleteProduct", num);
 	}
+
+
+	@Override
+	public ProductDto searchProduct(int num) {
+		return session.selectOne(namespace + "searchProduct", num);
+	}
+	
 	
 	
 

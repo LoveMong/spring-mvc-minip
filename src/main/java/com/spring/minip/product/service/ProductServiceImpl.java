@@ -39,6 +39,20 @@ public class ProductServiceImpl implements ProductService {
 	public void deleteProduct(int num) throws Exception {
 		productDao.deleteProduct(num);
 	}
+
+	@Override
+	public ProductDto searchProduct(int num) throws Exception {
+		
+		ProductDto productDto = productDao.searchProduct(num);
+		
+		if (productDto == null) {
+			throw new Exception("NoSearchErr");
+		}
+		
+		return productDto;	
+	}
+	
+	
 	
 	
 

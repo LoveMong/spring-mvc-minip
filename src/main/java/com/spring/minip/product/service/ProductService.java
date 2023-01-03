@@ -17,4 +17,6 @@ public interface ProductService {
     
     void deleteProduct(int num) throws Exception;
     
+    ProductDto searchProduct(int num) throws Exception;
+    
 }

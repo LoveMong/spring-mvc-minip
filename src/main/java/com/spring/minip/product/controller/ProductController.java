@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.mimip.util.UploadFileUtils;
 import com.spring.minip.board.domain.PageHandler;
@@ -104,12 +105,29 @@ public class ProductController {
     		productService.deleteProduct(num);
     	} catch (Exception e) {
 			e.printStackTrace();
-		}
-    	
-    	
-    	
+		}	
     	return "redirect:/product/list";
     }
+    
+    
+    @GetMapping("/update")
+    public String update(@RequestParam("num") int num, Model model, RedirectAttributes rattr) {
+    	
+    	String msg = "NO_SEARCH_ERR";
+    	
+    	try {
+    		ProductDto productDto = productService.searchProduct(num);
+    		model.addAttribute("product", productDto);
+		} catch (Exception e) {
+			e.printStackTrace();
+			rattr.addFlashAttribute("msg", msg);
+			return "redirect:/product/list";
+		}
+    	
+    	return "/product/productUpdate";
+    	
+    }
+    
 
 
 }

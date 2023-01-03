@@ -13,7 +13,7 @@ table th {
 
 </style>
 <body>
-	<jsp:include page="/view/common/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/header.jsp"/>
 
 	<div id="wrap" align="center">
 		<h2>상품 수정 - 관리자 페이지</h2>
@@ -26,7 +26,7 @@ table th {
 							<img src="/upload/noimage.jpeg">
 						</c:when>
 						<c:otherwise>
-							<img src="/upload/${product.pictureUrl}">					
+							<img src="/resources${product.pictureUrl}" style="width: 200px; height: 400px">					
 						</c:otherwise>
 					</c:choose></td>
 				<td>
@@ -50,10 +50,10 @@ table th {
 		</table>
 		<br><input type="submit" value="수정" onclick="return productCheck()">
 			<input type="reset" value="다시작성">
-			<input type="button" value="목록" onclick="location.href='productList.do'">
+			<input type="button" value="목록" onclick="location.href='/product/list'">
 		</form>
 	</div>
 	
-	<jsp:include page="/view/common/footer.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>
