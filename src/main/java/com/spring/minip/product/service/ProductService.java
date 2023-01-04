@@ -3,6 +3,8 @@ package com.spring.minip.product.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.spring.minip.product.domain.ProductDto;
 
 public interface ProductService {
@@ -18,5 +20,7 @@ public interface ProductService {
     void deleteProduct(int num) throws Exception;
     
     ProductDto searchProduct(int num) throws Exception;
+    
+    void updateProduct(ProductDto productDto, MultipartFile file) throws Exception;
     
 }

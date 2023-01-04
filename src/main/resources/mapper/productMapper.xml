@@ -37,5 +37,15 @@
     	FROM product
     	WHERE code = #{num} 
     </select>
+    
+    <update id="updateProduct" parameterType="ProductDto">
+    	UPDATE product
+    	SET name = #{name},
+    	    price = #{price},
+    	   	description = #{description},
+    	 	pictureUrl = #{pictureUrl},
+    	    thumbUrl = #{thumbUrl}
+       	WHERE code = #{code}
+    </update>
 
 </mapper>

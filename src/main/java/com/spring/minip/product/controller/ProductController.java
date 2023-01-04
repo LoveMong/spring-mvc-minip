@@ -128,6 +128,26 @@ public class ProductController {
     	
     }
     
+    @PostMapping("/update")
+    public String update(ProductDto productDto, MultipartFile file, Model model) {
+    	
+    	log.info("productDto : " + productDto);
+    	log.info("file : " + file.getOriginalFilename());
+    	
+    	try {
+    		productService.updateProduct(productDto, file);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("product", productDto);
+			model.addAttribute("msg", "UPDATE_ERR");
+			
+			return "/product/productUpdate";
+		}
+    	
+    	return "redirect:/product/list";
+    	
+    }
+    
 
 
 }

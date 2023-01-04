@@ -1,11 +1,16 @@
 package com.spring.minip.product.service;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.spring.mimip.util.UploadFileUtils;
 import com.spring.minip.product.dao.ProductDao;
 import com.spring.minip.product.domain.ProductDto;
 
@@ -14,6 +19,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductDao productDao;
+    
+    @Resource(name = "uploadPath")
+	private String uploadPath;
 
 	@Override
 	public List<ProductDto> productList() throws Exception {
@@ -51,12 +59,30 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productDto;	
 	}
-	
-	
-	
-	
 
-    
+	@Override
+	public void updateProduct(ProductDto productDto, MultipartFile file) throws Exception {
+		
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+        String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+        String fileName = null;
+        
+        System.out.println("file name : " + file.getOriginalFilename());
+        
+        
+        if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals("")) {
+        	
+        	fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+           
+        	productDto.setPictureUrl(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+        	productDto.setThumbUrl(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+           
+        }
+		
+		productDao.updateProduct(productDto);
+		
+	}
+	
 
 
 }

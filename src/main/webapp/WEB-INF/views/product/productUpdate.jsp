@@ -19,7 +19,8 @@ table th {
 		<h2>상품 수정 - 관리자 페이지</h2>
 		<form method="post" enctype="multipart/form-data" name="frm">
 		<input type="hidden" name="code" value="${product.code}">
-		<input type="hidden" name="img" value="${product.pictureUrl}">
+		<input type="hidden" name="pictureUrl" value="${product.pictureUrl}">
+		<input type="hidden" name="thumbUrl" value="${product.thumbUrl}">
 		<table class="list" style="margin-top: 60px">
 			<tr><td style="text-align: center"><c:choose>
 						<c:when test="${empty product.pictureUrl}">
@@ -38,7 +39,7 @@ table th {
 							<td><input type="text" name="price" value="${product.price}">원</td>
 						</tr>
 						<tr><th>사 진</th>
-							<td><input type="file" name="pictureUrl"><br>
+							<td><input type="file" name="file"><br>
 								(주의사항 : 이미지를 변경하고자 할때만 선택하시오.)</td>
 						</tr>
 						<tr><th>설 명</th>
@@ -55,5 +56,16 @@ table th {
 	</div>
 	
 	<jsp:include page="/WEB-INF/views/footer.jsp"/>
+	
+	<script>
+	
+		msg  = "${msg}";
+		
+		if (msg == "UPDATE_ERR") {
+			alert("수정 실패! 다시 시도해주세요.");
+		}
+		
+	</script>
+	
 </body>
 </html>

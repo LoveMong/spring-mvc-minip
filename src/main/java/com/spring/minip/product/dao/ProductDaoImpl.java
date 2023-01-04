@@ -51,6 +51,14 @@ public class ProductDaoImpl implements ProductDao {
 	public ProductDto searchProduct(int num) {
 		return session.selectOne(namespace + "searchProduct", num);
 	}
+
+
+	@Override
+	public void updateProduct(ProductDto productDto) {
+		session.update(namespace + "updateProduct", productDto);
+	}
+	
+	
 	
 	
 	

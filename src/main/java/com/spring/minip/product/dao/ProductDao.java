@@ -19,4 +19,6 @@ public interface ProductDao {
 	
 	ProductDto searchProduct(int num);
 	
+	void updateProduct(ProductDto productDto);
+	
 }
