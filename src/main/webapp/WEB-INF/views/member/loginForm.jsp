@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="memberId" id="memberId" tabindex="1" class="form-control" placeholder="ID" value="${cookie.memberId.value}"/>
-                                    <input type="hidden" name="toURL" value="${param.toURL}"/>
+                                    <input type="hidden" name="toUrl" value="${param.toUrl}"/>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="memberPwd" id="memberPwd" tabindex="2" class="form-control" placeholder="Password"/>
