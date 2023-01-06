@@ -49,10 +49,7 @@ public class ProductController {
     	
     	if (!loginCheck(request)) {
     		return "redirect:/login/login?toUrl=" + request.getRequestURI(); 			
-		}
-    	
-    	
-    	
+		}   	
     	
         Map<String, Integer> map = new HashMap<>();
         map.put("offset", (page - 1) * pageSize);
@@ -61,12 +58,10 @@ public class ProductController {
         int totalCnt = productService.countProduct();
         PageHandler pageHandler = new PageHandler(totalCnt, page, pageSize);
     	
-    	
     	List<ProductDto> productList = productService.productList(map);
     	
     	model.addAttribute("productList", productList);
     	model.addAttribute("ph", pageHandler);
-    	
 
     	
         return "/product/productList";
