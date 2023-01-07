@@ -16,7 +16,7 @@
                 <h2 class="display-3">안녕하세요, ${memberInfo.member_name}(${memberInfo.member_id})님!</h2>
             </c:when>
         </c:choose>
-        <p style="margin: 30px">안녕하세요. 이번에는 MiniProject로 MVC 2Model기반 JSP&Servlet을 이용한 회원관리, 상품관리, 게시판을 만들었습니다. 감사합니다. </p>
+        <p style="margin: 30px">안녕하세요. MiniProject로 MVC 2Model 기반 Spring/Jsp을 사용한 회원관리, 상품관리, 게시판을 개발해 보았습니다. 감사합니다. </p>
         <p><a class="btn btn-primary btn-lg" href="https://github.com/LoveMong" role="button">More Project &raquo;</a></p>
     </div>
 </div>

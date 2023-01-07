@@ -27,7 +27,7 @@ table th {
 							<img src="/upload/noimage.jpeg">
 						</c:when>
 						<c:otherwise>
-							<img src="/resources${product.pictureUrl}" style="width: 200px; height: 400px">					
+							<img src="/resources${product.pictureUrl}" style="max-width 100%; height: auto;">					
 						</c:otherwise>
 					</c:choose></td>
 				<td>

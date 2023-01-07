@@ -18,7 +18,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,7 +56,7 @@
                 </div>
             </li>
         </ul>
-        <ul class="navbar-nav mr-auto" style="margin-left: 600px;">
+        <ul class="navbar-nav mr-auto" style="margin-left: 600px; color: white;">
             <c:choose>
                 <c:when test="${memberInfo.member_id == null }">
                     <li class="nav-item" style="text-align: left;">

@@ -71,6 +71,7 @@ $(document).ready(function(){
                     if(result === 1) {
                         setMessage_Join("사용가능한 아이디입니다.", jrm.member_id);
                         document.getElementById("idCheck").value = "Check Completed";
+                        document.getElementById("idCheck").style.color = "#00FF00";
                     } else {
                         setMessage_Join("이미 사용중인 아이디입니다.", jrm.member_id);
                     }
@@ -92,6 +93,7 @@ $(document).ready(function(){
     // 아이디 입력칸 누르면 idCehck 다시 유도
     document.getElementById("member_id").onclick = function () {
         document.getElementById("idCheck").value = "Check ID";
+        document.getElementById("idCheck").style.color = "#000000";
     }
 
 });
