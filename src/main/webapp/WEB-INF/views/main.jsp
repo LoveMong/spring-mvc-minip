@@ -41,7 +41,7 @@
                 &#183; 상품 리스트 정보 Paging 처리 <br>
                 &#183; Bootstrap Example Template CSS 적용
             </p>
-            <p><a class="btn btn-secondary" href="/product/list.do" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="/product/list" role="button" onclick="return checkLogin();">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>게 시 판</h2>
@@ -50,7 +50,7 @@
                 &#183; 게시글 리스트 Paging 처리 <br>
                 &#183; Bootstrap Example Template CSS 적용
             </p>
-            <p><a class="btn btn-secondary" href="<c:url value='/board/list'/>" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="<c:url value='/board/list'/>" role="button" onclick="return checkLogin();">View details &raquo;</a></p>
         </div>
     </div>
 
@@ -59,5 +59,21 @@
 </div>
 
 <jsp:include page="../views/footer.jsp"/>
+
+<script type="text/javascript">
+
+    function checkLogin() {
+    	
+    	let sessionId = "${memberInfo.member_id}";
+
+    	if (sessionId === null || sessionId === "") {
+    		return confirm("로그인이 필요합니다.");
+    	} else {
+    		return true;
+    	}
+    	
+    }
+
+</script>
 
 </body>
