@@ -10,17 +10,21 @@
 <body>
 <script type="text/javascript">
 
+ 	let URL_UPDATE = "/board/update?num=${param.num}";
+ 	let URL_DELETE = "/board/delete?num=${param.num}";
+ 	
+
     if(window.name == 'update') {
 
-        window.opener.parent.location.href = "/board/update?num=${param.num}";
+        window.opener.parent.location.assign(URL_UPDATE);
 
     } else if(window.name == 'delete') {
 
     	alert("삭제되었습니다.");
 
-        window.opener.parent.location.href = "/board/delete?num=${param.num}";
+        window.opener.parent.location.href = URL_DELETE;
 
-        window.opener.parent.location.href = "/board/list";
+        window.opener.parent.location.replace("/board/list");
         
     }
 
