@@ -7,10 +7,7 @@
 
 
 # Demo(시연 영상 - 사진 클릭)
-[![]()
-
-# ERD
-<>
+[![main](https://user-images.githubusercontent.com/101382487/211152943-f1e7ff3e-859d-4265-956b-43150fee8faf.png)](https://youtu.be/JaYAWKjZ9Ks)
 
 
 
